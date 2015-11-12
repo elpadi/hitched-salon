@@ -1,0 +1,88 @@
+body {
+	margin:0;
+	padding:0;
+	background-color:white;
+	color:black;
+}
+
+#page {
+	max-width:960px;
+	margin:0 auto;
+}
+
+.tc { text-align:center; }
+.no-underline { text-decoration:none; }
+.fr { float:right; }
+.uppercase { text-transform:uppercase; }
+.clearfix::after {
+	content:'';
+	display:block;
+	clear:both;
+}
+.horizontal-list {
+	list-style-type:none;
+	margin:0;
+	padding:0;
+}
+.horizontal-list > li {
+	display:inline-block;
+}
+
+#masthead {
+	background-color:#fef4f1;
+}
+.appointments-button {
+	color:white;
+	padding:12px 12px 0;
+	line-height:30px;
+	font-size:20px;
+	margin-right:70px;
+	width:158px;
+	height:53px;
+	background-color:#9BB038;
+}
+
+.menu-container {
+	background-color:white;
+	border:1px solid #d4d753;
+	border-left-style:none;
+	border-right-style:none;
+	height:60px;
+}
+.nav-menu a {
+	line-height:60px;
+	text-decoration:none;
+}
+
+#main-menu {
+	clear:both;
+}
+#main-menu > ul {
+	text-align:right;
+}
+#main-menu li:nth-child(1),
+#main-menu li:nth-child(2) {
+	float:left;
+}
+
+#main-menu > ul ul {
+	text-align:center;
+	background-color:#9BB038;
+}
+#main-menu li li {
+	float:none;
+	display:block;
+}
+#main-menu li li a {
+	line-height:40px;
+}
+
+#colophon {
+	background-color:#fef4f1;
+}
+#colophon aside {
+	display:inline-block;
+}
+#colophon h2 {
+	margin-top:0;
+}

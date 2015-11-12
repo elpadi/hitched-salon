@@ -20,6 +20,14 @@
 
 <body <?php body_class(); ?>>
 <div id="page" class="hfeed site">
-	<header id="masthead" class="site-header" role="banner">
+	<header id="masthead" class="site-header clearfix" role="banner">
+		<a class="appointments-button no-underline uppercase tc fr" href="/appointments">Book Appointments</a>
 	</header><!-- .site-header -->
+	<?php wp_nav_menu(array(
+		'theme_location' => 'primary',
+		'container' => 'nav',
+		'container_id' => 'main-menu',
+		'container_class' => 'menu-container uppercase',
+		'menu_class' => 'nav-menu horizontal-list',
+	)); ?>
 	<div id="content" class="site-content">

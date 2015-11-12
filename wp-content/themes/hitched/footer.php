@@ -6,7 +6,7 @@
 		'container_class' => 'menu-container uppercase tc',
 		'menu_class' => 'nav-menu horizontal-list',
 	)); ?>
-	<footer id="colophon" class="site-footer tc" role="contentinfo">
+	<footer id="colophon" class="site-footer uppercase tc" role="contentinfo">
 		<?php dynamic_sidebar('footer'); ?>
 	</footer><!-- .site-footer -->
 </div><!-- .site -->

@@ -103,11 +103,24 @@ body {
 	line-height:40px;
 }
 
+#pages-menu {
+	letter-spacing:2px;
+}
+#pages-menu li::after {
+	content:'-';
+	margin:0 6px 0 13px;
+}
+#pages-menu li:last-child::after {
+	display:none;
+}
+
 #colophon {
 	background-color:#fef4f1;
+	padding-top:20px;
 }
 #colophon aside {
 	display:inline-block;
+	vertical-align:top;
 }
 #colophon h2 {
 	margin-top:0;

@@ -1,3 +1,7 @@
+* {
+	box-sizing:border-box;
+}
+
 body {
 	margin:0;
 	padding:0;
@@ -8,6 +12,7 @@ body {
 #page {
 	max-width:960px;
 	margin:0 auto;
+	position:relative;
 }
 
 .tc { text-align:center; }
@@ -34,12 +39,20 @@ body {
 .appointments-button {
 	color:white;
 	padding:12px 12px 0;
-	line-height:30px;
-	font-size:20px;
+	font-size:14px;
+	line-height:17px;
 	margin-right:70px;
+	margin-bottom:25px;
 	width:158px;
 	height:53px;
 	background-color:#9BB038;
+}
+
+#logo {
+	position:absolute;
+	left:50%;
+	margin-left:-137px;
+	top:22px;
 }
 
 .menu-container {
@@ -48,6 +61,8 @@ body {
 	border-left-style:none;
 	border-right-style:none;
 	height:60px;
+	font-size:15px;
+	letter-spacing:3px;
 }
 .nav-menu a {
 	line-height:60px;
@@ -56,13 +71,24 @@ body {
 
 #main-menu {
 	clear:both;
+	padding:0 30px;
 }
 #main-menu > ul {
 	text-align:right;
 }
+#main-menu > ul > li {
+}
 #main-menu li:nth-child(1),
 #main-menu li:nth-child(2) {
 	float:left;
+}
+#main-menu li:nth-child(1)::after,
+#main-menu li:nth-child(3)::after {
+	content:':';
+	margin:0 13px;
+}
+#main-menu li:nth-child(3)::after {
+	margin:0 6px 0 13px;
 }
 
 #main-menu > ul ul {

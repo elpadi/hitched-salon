@@ -21,8 +21,9 @@
 <body <?php body_class(); ?>>
 <div id="page" class="hfeed site">
 	<header id="masthead" class="site-header clearfix" role="banner">
-		<a class="appointments-button no-underline uppercase tc fr" href="/appointments">Book Appointments</a>
+		<a class="appointments-button no-underline uppercase tc fr" href="/appointments">Book Appointment</a>
 	</header><!-- .site-header -->
+	<a id="logo" href="<?php echo home_url(); ?>"><img src="<?php echo get_template_directory_uri(); ?>/img/logo.png" alt="Hitched Salon"></a>
 	<?php wp_nav_menu(array(
 		'theme_location' => 'primary',
 		'container' => 'nav',

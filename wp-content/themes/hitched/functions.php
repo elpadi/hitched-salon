@@ -4,6 +4,8 @@ function hitched_theme_setup() {
 		'primary' => 'Main Menu',
 		'secondary' => 'Pages Menu',
 	));
+	add_theme_support('post-thumbnails');
+	set_post_thumbnail_size(960, 437, true);
 }
 add_action('after_setup_theme', 'hitched_theme_setup');
 

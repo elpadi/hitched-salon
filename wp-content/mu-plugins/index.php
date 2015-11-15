@@ -10,5 +10,6 @@ License: GPLv3.0
 */
 define('MU_SITE_CLASS_NAME', 'Hitched');
 require_once(dirname(ABSPATH).'/vendor/elpadi/wordpress-library/src/mu-plugins/index.php');
+require_once(__DIR__.'/autoloader.php');
 require_once(__DIR__.'/src/Hitched.php');
-Hitched::instance();
+Hitched\Hitched::instance();

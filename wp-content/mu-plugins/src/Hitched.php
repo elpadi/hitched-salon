@@ -1,6 +1,7 @@
 <?php
+namespace Hitched;
 
-class Hitched extends App {
+class Hitched extends \App {
 
 	protected static $SITE_PREFIX = 'hitched_';
 
@@ -21,6 +22,7 @@ class Hitched extends App {
 			'before_title'  => '<h2 class="widget-title">',
 			'after_title'   => '</h2>',
 		));
+		register_widget('Hitched\\Widgets\\MailingListWidget');
 	}
 
 }

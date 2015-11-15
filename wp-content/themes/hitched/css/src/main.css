@@ -6,7 +6,7 @@ body {
 	margin:0;
 	padding:0;
 	background-color:white;
-	color:black;
+	color:#4f5e6f;
 }
 
 #page {
@@ -19,6 +19,7 @@ body {
 .no-underline { text-decoration:none; }
 .fr { float:right; }
 .uppercase { text-transform:uppercase; }
+.no-text { overflow:hidden; white-space:nowrap; text-indent:110%; }
 .clearfix::after {
 	content:'';
 	display:block;
@@ -31,6 +32,18 @@ body {
 }
 .horizontal-list > li {
 	display:inline-block;
+}
+.single-background {
+	background-color:transparent;
+	background-position:center center;
+	background-repeat:no-repeat;
+}
+.clean-button {
+	text-transform:inherit;
+	outline-style:none;
+	background-color:transparent;
+	border-style:none;
+	padding:0;
 }
 
 #masthead {
@@ -114,14 +127,71 @@ body {
 	display:none;
 }
 
+.menu-social-media-container li:nth-child(1) .single-background { background-position:-5% 50%; }
+.menu-social-media-container li:nth-child(2) .single-background { background-position:20% 50%; }
+.menu-social-media-container li:nth-child(3) .single-background { background-position:49% 50%; }
+.menu-social-media-container li:nth-child(4) .single-background { background-position:72% 50%; }
+
 #colophon {
 	background-color:#fef4f1;
-	padding-top:20px;
+	padding:20px 50px 0;
 }
-#colophon aside {
+#colophon .widget {
 	display:inline-block;
 	vertical-align:top;
 }
-#colophon h2 {
+#colophon .widget-title {
+	text-transform:lowercase;
 	margin-top:0;
+}
+#colophon .single-background {
+	display:block;
+	width:30px;
+	height:30px;
+	background-image:url(../../img/icon-sprite.png);
+}
+#colophon #nav_menu-2,
+#colophon #mailinglist_widget-2 {
+	width:280px;
+}
+#colophon #nav_menu-2 {
+	float:left;
+	text-align:left;
+}
+#colophon #mailinglist_widget-2 {
+	float:right;
+	text-align:right;
+}
+/* Social */
+/* Address */
+#colophon #text-2 {
+	line-height:1.6;
+	font-size:14px;
+	letter-spacing:2px;
+}
+#colophon #text-2 .widget-title {
+	display:none;
+}
+/* Mailing List */
+#mailinglist_widget-2 input[type="submit"] {
+	color:white;
+	background-color:#8aa42b;
+	padding:0 8px;
+}
+#mailinglist_widget-2 input {
+	height:30px;
+	line-height:30px;
+}
+/* Email */
+#colophon #text-3 {
+	display:block;
+	clear:both;
+}
+#colophon #text-3 .widget-title {
+	margin:20px 0 0;
+}
+#colophon #text-3 .single-background {
+	width:40px;
+	margin:0 auto;
+	background-position:102% 50%;
 }

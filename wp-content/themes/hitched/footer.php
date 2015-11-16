@@ -7,7 +7,7 @@
 		'menu_class' => 'nav-menu horizontal-list',
 	)); ?>
 	<footer id="colophon" class="site-footer uppercase tc" role="contentinfo">
-		<?php dynamic_sidebar('footer'); ?>
+		<div class="site-width"><?php dynamic_sidebar('footer'); ?></div>
 	</footer><!-- .site-footer -->
 </div><!-- .site -->
 <?php wp_footer(); ?>

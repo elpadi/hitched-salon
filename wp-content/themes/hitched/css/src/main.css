@@ -3,16 +3,12 @@
 }
 body {
 	margin:0;
-	padding:0 10px;
 	background-color:white;
 	color:#4f5e6f;
 }
-#page {
+.site-width {
 	max-width:960px;
 	margin:0 auto;
-	position:relative;
-}
-#content {
 	position:relative;
 }
 
@@ -225,7 +221,7 @@ p:last-child {
 
 #colophon {
 	background-color:#fef4f1;
-	padding:20px 50px 0;
+	padding:20px 50px 15px;
 }
 #colophon .widget {
 	display:inline-block;

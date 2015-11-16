@@ -4,11 +4,20 @@
 body {
 	margin:0;
 	background-color:white;
+}
+#page {
+	position:relative;
+}
+
+body,
+.nav-menu a {
 	color:#4f5e6f;
 }
-a {
+a,
+#post-18 h4 {
 	color:#89a542;
 }
+
 .site-width {
 	max-width:960px;
 	margin:0 auto;
@@ -77,6 +86,10 @@ p:first-child {
 }
 p:last-child {
 	margin-bottom:0;
+}
+h4 {
+	margin-top:0;
+	margin-bottom:1em;
 }
 
 .slideshow {
@@ -347,6 +360,7 @@ article.page > .entry-content {
 	margin:0 auto;
 	font-size:18px;
 }
+article.page > .entry-content > h4,
 article.page > .entry-content > p {
 	max-width:800px;
 	margin-left:auto;
@@ -427,4 +441,10 @@ article.page h2 {
 #post-60 > a:last-child {
 	float:right;
 	margin-bottom:70px;
+}
+
+/* Careers */
+#post-18 .entry-content {
+	text-align:left;
+	margin-bottom:50px;
 }

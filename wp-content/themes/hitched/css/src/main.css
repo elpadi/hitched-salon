@@ -24,6 +24,7 @@ a {
 .uppercase { text-transform:uppercase; }
 .lowercase { text-transform:lowercase; }
 .no-text { overflow:hidden; white-space:nowrap; text-indent:110%; }
+.no-color { color:inherit; }
 .clearfix::after {
 	content:'';
 	display:block;
@@ -389,4 +390,41 @@ article.page h2 {
 }
 #post-54 a {
 	text-decoration:none;
+}
+
+/* Bridal */
+#post-60 {
+	overflow:auto;
+}
+#post-60 ul {
+	overflow:auto;
+	margin:50px auto 20px;
+	max-width:800px;
+}
+#post-60 li {
+	width:45%;
+	float:left;
+	margin-bottom:60px;
+}
+#post-60 li:nth-child(even) {
+	float:right;
+}
+#post-60 ul a {
+	display:block;
+}
+#post-60 ul img {
+	width:100%;
+	height:60vw;
+	max-height:480px;
+	object-fit:cover;
+	object-position:left top;
+}
+#post-60 ul span {
+	display:block;
+	font-size:20px;
+	line-height:2;
+}
+#post-60 > a:last-child {
+	float:right;
+	margin-bottom:70px;
 }

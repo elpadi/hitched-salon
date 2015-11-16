@@ -6,6 +6,9 @@ body {
 	background-color:white;
 	color:#4f5e6f;
 }
+a {
+	color:#89a542;
+}
 .site-width {
 	max-width:960px;
 	margin:0 auto;
@@ -370,4 +373,20 @@ article.page h2 {
 .team-member > .info {
 	float:right;
 	width:calc(100% - 264px);
+}
+
+/* Accessories */
+#post-54 {
+	margin-bottom:50px;
+}
+#post-54 ul {
+	margin:50px auto;
+	max-width:600px;
+	line-height:30px;
+}
+#post-54 li {
+	width:49%;
+}
+#post-54 a {
+	text-decoration:none;
 }

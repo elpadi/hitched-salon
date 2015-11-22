@@ -19,4 +19,6 @@ a,
 .menu-container {
 	border-color:#d4d753;
 }
-
+#main-menu .sub-menu a {
+	color:white;
+}

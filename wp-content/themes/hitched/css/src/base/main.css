@@ -16,7 +16,9 @@ body {
 	position:relative;
 }
 
-#logo { z-index:3; }
+#logo { z-index:4; }
+#masthead { z-index:3; }
+.menu-container { z-index:2; }
 #content { z-index:1; }
 
 .tc { text-align:center; }

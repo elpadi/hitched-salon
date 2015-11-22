@@ -33,17 +33,28 @@
 	font-weight: normal;
 	font-style: normal;
 }
-
-.serif {
-	font-family:serif;
+@font-face {
+	font-family: 'BrandonGrotesqueRegular';
+	src: url('../../fonts/brandongrotesque_regular/2B5D3B_1_0.eot');
+	src: local('☺'), url('../../fonts/brandongrotesque_regular/2B5D3B_1_0.woff') format('woff'), url('../../fonts/brandongrotesque_regular/2B5D3B_1_0.ttf') format('truetype')
+	font-weight: normal;
+	font-style: normal;
 }
-.bg--bold,
-.bold {
-	font-family: 'BrandonGrotesqueBlackRegular';
+
+body,
+.sans-serif,
+#main-menu .sub-menu,
+.bg--reg {
+	font-family:BrandonGrotesqueRegular,sans-serif;
+}
+.bold,
+.bg--bold {
+	font-family:BrandonGrotesqueBlackRegular,sans-serif;
 }
 .filo--reg {
 	font-family:filosreg,serif;
 }
+.serif,
 .filo--lin {
 	font-family:filosreglin,serif;
 }

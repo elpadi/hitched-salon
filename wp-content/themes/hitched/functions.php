@@ -13,29 +13,39 @@ function hitched_theme_setup() {
 }
 add_action('after_setup_theme', 'hitched_theme_setup');
 
+function hitched_styles() {
+	$css_dir = get_stylesheet_directory_uri().'/css/src';
+	$styles = [
+		'base' => ['fonts','colors'],
+		'layout' => ['menu','header','footer'],
+		'sections' => ['slideshow','grid'],
+		'pages' => ['home','about','accessories','bridal','careers','happenings','faq'],
+	];
+	foreach ($styles as $type => $files)
+		foreach ($files as $file) wp_register_style(Site::prefix($file), "$css_dir/$type/$file.css", [], false);
+	
+	wp_register_style(Site::prefix('pages'), $css_dir.'/pages/main.css', [], false);
+	wp_enqueue_style(Site::prefix('main'), $css_dir.'/base/main.css', array_map(['Hitched\Hitched','prefix'], array_merge($styles['base'], $styles['layout'])), false);
+	$queue = [];
+	if (is_front_page()) $queue = array_merge($queue, ['slideshow','grid','home']);
+	else {
+		$queue[] = 'pages';
+	}
+	foreach ($queue as $style) wp_enqueue_style(Site::prefix($style));
+}
+function hitched_scripts() {
+	$js_dir = get_stylesheet_directory_uri().'/js/src';
+	wp_register_script(Site::prefix('stdlib'), $js_dir.'/inc/stdlib.js', [], false);
+	wp_register_script(Site::prefix('hitched'), $js_dir.'/hitched/hitched.js', [Site::prefix('stdlib')], false);
+	wp_enqueue_script(Site::prefix('main'), $js_dir.'/main.js', [Site::prefix('hitched')], false);
+}
 function hitched_assets() {
 	if (MINIFY_ASSETS) {
 		wp_enqueue_style('hitched-css', get_stylesheet_uri());
 	}
 	else {
-		$css_dir = get_stylesheet_directory_uri().'/css/src';
-		$styles = [
-			'base' => ['fonts','colors'],
-			'layout' => ['menu','header','footer'],
-			'sections' => ['slideshow','grid'],
-			'pages' => ['home','about','accessories','bridal','careers','happenings','faq'],
-		];
-		foreach ($styles as $type => $files)
-			foreach ($files as $file) wp_register_style(Site::prefix($file), "$css_dir/$type/$file.css", [], false);
-		
-		wp_register_style(Site::prefix('pages'), $css_dir.'/pages/main.css', [], false);
-		wp_enqueue_style(Site::prefix('main'), $css_dir.'/base/main.css', array_map(['Hitched\Hitched','prefix'], array_merge($styles['base'], $styles['layout'])), false);
-		$queue = [];
-		if (is_front_page()) $queue = array_merge($queue, ['slideshow','grid','home']);
-		else {
-			$queue[] = 'pages';
-		}
-		foreach ($queue as $style) wp_enqueue_style(Site::prefix($style));
+		hitched_styles();
+		hitched_scripts();
 	}
 }
 add_action('wp_enqueue_scripts', 'hitched_assets');

@@ -14,12 +14,13 @@ function hitched_theme_setup() {
 add_action('after_setup_theme', 'hitched_theme_setup');
 
 function hitched_styles() {
+	global $wp_the_query;
 	$css_dir = get_stylesheet_directory_uri().'/css/src';
 	$styles = [
 		'base' => ['fonts','colors'],
 		'layout' => ['menu','header','footer'],
 		'sections' => ['slideshow','grid'],
-		'pages' => ['home','about','accessories','bridal','careers','happenings','faq'],
+		'pages' => ['home','about-us','accessories','bridal','careers','happenings','faq'],
 	];
 	foreach ($styles as $type => $files)
 		foreach ($files as $file) wp_register_style(Site::prefix($file), "$css_dir/$type/$file.css", [], false);
@@ -28,8 +29,9 @@ function hitched_styles() {
 	wp_enqueue_style(Site::prefix('main'), $css_dir.'/base/main.css', array_map(['Hitched\Hitched','prefix'], array_merge($styles['base'], $styles['layout'])), false);
 	$queue = [];
 	if (is_front_page()) $queue = array_merge($queue, ['slideshow','grid','home']);
-	else {
+	elseif (is_page()) {
 		$queue[] = 'pages';
+		wp_enqueue_style(Site::prefix($wp_the_query->query['pagename']));
 	}
 	foreach ($queue as $style) wp_enqueue_style(Site::prefix($style));
 }
@@ -74,9 +76,9 @@ add_filter('nav_menu_link_attributes', function($atts, $item, $args, $depth) {
 
 add_filter('dynamic_sidebar_params', function($params) {
 	if ($params[0]['id'] === 'footer') {
-		$params[0]['before_title'] = str_replace('class="', 'class="bombshell ', $params[0]['before_title']);
+		$params[0]['before_title'] = str_replace('class="', 'class="cursive ', $params[0]['before_title']);
 		if ($params[0]['widget_name'] === 'Text') {
-			$params[0]['before_widget'] = str_replace('class="', 'class="filo--lin ', $params[0]['before_widget']);
+			$params[0]['before_widget'] = str_replace('class="', 'class="serif ', $params[0]['before_widget']);
 		}
 	}
 	return $params;

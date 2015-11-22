@@ -36,7 +36,7 @@
 @font-face {
 	font-family: 'BrandonGrotesqueRegular';
 	src: url('../../fonts/brandongrotesque_regular/2B5D3B_1_0.eot');
-	src: local('☺'), url('../../fonts/brandongrotesque_regular/2B5D3B_1_0.woff') format('woff'), url('../../fonts/brandongrotesque_regular/2B5D3B_1_0.ttf') format('truetype')
+	src: local('☺'), url('../../fonts/brandongrotesque_regular/2B5D3B_1_0.woff') format('woff'), url('../../fonts/brandongrotesque_regular/2B5D3B_1_0.ttf') format('truetype');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -47,13 +47,16 @@ body,
 .bg--reg {
 	font-family:BrandonGrotesqueRegular,sans-serif;
 }
+strong,
 .bold,
 .bg--bold {
 	font-family:BrandonGrotesqueBlackRegular,sans-serif;
+	font-weight:100;
 }
 .filo--reg {
 	font-family:filosreg,serif;
 }
+article.page h2,
 .serif,
 .filo--lin {
 	font-family:filosreglin,serif;
@@ -61,6 +64,7 @@ body,
 .prox--light {
 	font-family:proximanovalight,Arial,sans-serif;
 }
+.cursive,
 .bombshell {
 	font-family:BombshellPro,cursive;
 }

@@ -2,8 +2,9 @@ article.page {
 	margin-bottom:50px;
 }
 article.page .page-title {
-	margin:20px 0 12px;
-	font-size:40px;
+	margin:55px 0 12px;
+	font-size:70px;
+	line-height:1;
 }
 article.page > header .attachment-post-thumbnail {
 	display:block;
@@ -13,20 +14,39 @@ article.page > header .attachment-post-thumbnail {
 article.page > .entry-content {
 	max-width:880px;
 	margin:0 auto;
-	font-size:18px;
+	font-size:22px;
 }
 article.page > .entry-content > h4,
 article.page > .entry-content > p {
-	max-width:800px;
+	max-width:810px;
 	margin-left:auto;
 	margin-right:auto;
 	line-height:1.8;
 }
 article.page h2 {
-	border:1px solid #8aa42b;
+	border-width:1px;
+	border-style:solid;
 	text-transform:uppercase;
-	line-height:60px;
+	line-height:70px;
 	margin:50px auto 60px;
 	text-align:center;
+	letter-spacing:5px;
+	font-weight:100;
+	font-size:24px;
+	padding: 5px 19px 0;
+	display: inline-block;
+	position: relative;
+	z-index: 2;
+	background-color: #FFF;
+	outline: 20px solid #FFF;
+}
+article.page h2 + hr {
+	max-width:100%;
+	width:880px;
+	position: relative;
+	margin:-27px auto 0;
+	bottom: 70px;
+	border-top-style:solid;
+	border-bottom-style:none;
 }
 

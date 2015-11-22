@@ -64,6 +64,7 @@
 #mailinglist_widget-2 input[type="email"] {
 	padding-left:8px;
 	font-size:10px;
+	width:135px;
 }
 #mailinglist_widget-2 input[type="submit"] {
 	color:white;

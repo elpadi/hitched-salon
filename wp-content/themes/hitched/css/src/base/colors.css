@@ -13,6 +13,10 @@ a,
 #post-18 h4 {
 	color:#89a542;
 }
+article.page h2,
+article.page h2 + hr {
+	border-color:#8aa42b;
+}
 #post-8 li:nth-child(odd) {
 	color:#9ab42b;
 }

@@ -1,0 +1,27 @@
+#post-27 {
+	text-align:center;
+}
+.team-member {
+	max-width:742px;
+	margin:0 auto 90px;
+	clear:both;
+	overflow:hidden;
+	line-height:1.5;
+	text-align:left;
+	font-size:20px;
+}
+.team-member:nth-of-type(1) {
+	margin-top:50px;
+}
+.team-member > img {
+	float:left;
+	margin-top:8px;
+}
+.team-member > .info {
+	float:right;
+	width:calc(100% - 264px);
+}
+.team-member > .info > p:first-child {
+	font-size:21px;
+}
+

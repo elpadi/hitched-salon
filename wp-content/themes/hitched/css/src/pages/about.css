@@ -1,0 +1,15 @@
+.team-member {
+	max-width:760px;
+	margin:0 auto 90px;
+	clear:both;
+	overflow:hidden;
+	line-height:1.5;
+}
+.team-member > img {
+	float:left;
+}
+.team-member > .info {
+	float:right;
+	width:calc(100% - 264px);
+}
+

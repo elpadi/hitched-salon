@@ -1,0 +1,22 @@
+#masthead {
+	background-color:#fef4f1;
+}
+.appointments-button {
+	color:white;
+	padding:12px 12px 0;
+	font-size:14px;
+	line-height:17px;
+	margin-right:70px;
+	margin-bottom:25px;
+	width:158px;
+	height:53px;
+	background-color:#9BB038;
+}
+
+#logo {
+	position:absolute;
+	left:50%;
+	margin-left:-137px;
+	top:22px;
+}
+

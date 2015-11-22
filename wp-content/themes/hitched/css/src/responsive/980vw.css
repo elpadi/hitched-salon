@@ -1,0 +1,10 @@
+/* Full Width */
+@media (min-width:980px) {
+	#home-gallery {
+		height:593px;
+	}
+	#page-callouts .grid__item {
+		height:254px;
+	}
+}
+

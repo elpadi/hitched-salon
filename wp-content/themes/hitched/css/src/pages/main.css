@@ -1,0 +1,32 @@
+article.page {
+	margin-bottom:50px;
+}
+article.page .page-title {
+	margin:20px 0 12px;
+	font-size:40px;
+}
+article.page > header .attachment-post-thumbnail {
+	display:block;
+	width:100%;
+	height:auto;
+}
+article.page > .entry-content {
+	max-width:880px;
+	margin:0 auto;
+	font-size:18px;
+}
+article.page > .entry-content > h4,
+article.page > .entry-content > p {
+	max-width:800px;
+	margin-left:auto;
+	margin-right:auto;
+	line-height:1.8;
+}
+article.page h2 {
+	border:1px solid #8aa42b;
+	text-transform:uppercase;
+	line-height:60px;
+	margin:50px auto 60px;
+	text-align:center;
+}
+

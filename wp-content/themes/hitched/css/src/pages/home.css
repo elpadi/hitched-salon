@@ -1,0 +1,38 @@
+#post-2 .page-title,
+#post-2 .entry-content {
+	display:none;
+}
+#home-gallery {
+	height:62vw;
+	margin-bottom:8px;
+}
+#page-callouts {
+	margin-bottom:8px;
+	font-size:27px;
+	letter-spacing:3px;
+}
+#page-callouts .grid__item {
+	width:calc(33.33% - 6px);
+	margin-left:8px;
+	height:24vw;
+}
+#page-callouts .single-background {
+	background-size:cover;
+}
+#page-callouts a > span {
+	color:white;
+	height:auto;
+	top:50%;
+	bottom:auto;
+	padding:0 20%;
+	opacity:0;
+	transform:translateY(-50%);
+	transition:opacity 0.3s;
+}
+#page-callouts a:hover > .overlay {
+	opacity:0.7;
+}
+#page-callouts a:hover > span {
+	opacity:1;
+}
+

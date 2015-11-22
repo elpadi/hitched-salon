@@ -1,0 +1,17 @@
+/* FAQ */
+#post-16 ul {
+	text-align:left;
+	line-height:1.75;
+}
+#post-16 li {
+	display:block;
+	margin-bottom:15px;
+}
+#post-16 li:nth-child(odd) {
+	font-weight:bold;
+	cursor:pointer;
+}
+#post-16 li:nth-child(even) {
+	display:none;
+}
+

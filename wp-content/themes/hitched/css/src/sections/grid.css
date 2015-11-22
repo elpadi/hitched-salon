@@ -1,0 +1,37 @@
+.grid {
+	overflow:hidden;
+	position:relative;
+}
+.grid__item {
+	margin-left:0;
+	margin-bottom:10px;
+	width:auto;
+	position:relative;
+	overflow:hidden;
+}
+.grid__item.last-row {
+	margin-bottom:0 !important;
+}
+.grid__item {
+	float:left;
+	margin-left:2%;
+	margin-bottom:2%;
+}
+.grid[data-col-count="2"] > .grid__item {
+	width:49%;
+}
+.grid[data-col-count="3"] > .grid__item {
+	width:32%;
+}
+.grid[data-col-count="3"] > .grid__item:nth-child(3n + 1) {
+	clear:left;
+	margin-left:0 !important;
+}
+.grid[data-col-count="3"] > .grid__item:nth-child(3n + 3) {
+	float:right;
+	clear:right;
+}
+.grid[data-col-count="4"] > .grid__item {
+	width:23.5%;
+}
+

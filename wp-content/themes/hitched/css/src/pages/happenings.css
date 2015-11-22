@@ -1,0 +1,34 @@
+/* Happenings */
+#post-8 ul {
+	overflow:auto;
+}
+#post-8 li {
+	width:49%;
+}
+#post-8 li:nth-child(4n + 1),
+#post-8 li:nth-child(4n + 2) {
+	float:left;
+	clear:left;
+}
+#post-8 li:nth-child(4n + 3),
+#post-8 li:nth-child(4n + 4) {
+	float:right;
+	clear:right;
+}
+#post-8 li:nth-child(odd) {
+	font-weight:bold;
+}
+#post-8 li:nth-child(even) {
+	margin-bottom:20px;
+	font-size:17px;
+}
+#post-8 li:nth-child(4n + 3) {
+	margin-top:-20px;
+}
+#post-8 ul,
+#post-8 hr {
+	max-width:800px;
+	margin-left:auto;
+	margin-right:auto;
+}
+

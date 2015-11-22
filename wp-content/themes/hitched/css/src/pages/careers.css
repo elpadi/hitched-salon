@@ -1,5 +1,12 @@
 /* Careers */
+#post-18 {
+	margin-bottom:70px;
+}
 #post-18 .entry-content {
 	text-align:left;
+	max-width:780px;
+}
+#post-18 .entry-content > p {
+	line-height:1.5;
 }
 

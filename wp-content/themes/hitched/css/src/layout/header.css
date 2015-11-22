@@ -4,21 +4,21 @@
 .appointments-button {
 	position:relative;
 	color:white;
-	padding:12px 12px 0;
-	font-size:17px;
-	line-height:19px;
+	padding:14px 12px 0;
+	font-size:14px;
+	line-height:17px;
 	letter-spacing:2px;
 	margin-right:70px;
 	margin-bottom:35px;
 	width:158px;
-	height:48px;
+	height:46px;
 	background-color:#9BB038;
 }
 .appointments-button::after {
 	content:'';
 	position:absolute;
 	left:0;
-	top:100%;
+	top:99%;
 	width:101%;
 	height:0;
 	padding-bottom:8%;

@@ -2,7 +2,7 @@ article.page {
 	margin-bottom:50px;
 }
 article.page .page-title {
-	margin:55px 0 12px;
+	margin:55px 0 35px;
 	font-size:70px;
 	line-height:1;
 }
@@ -12,9 +12,12 @@ article.page > header .attachment-post-thumbnail {
 	height:auto;
 }
 article.page > .entry-content {
-	max-width:880px;
+	max-width:704px;
 	margin:0 auto;
 	font-size:22px;
+}
+article.page h2 + hr {
+	width:704px;
 }
 article.page > .entry-content > h4,
 article.page > .entry-content > p {

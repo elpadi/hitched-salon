@@ -3,7 +3,9 @@ var Hitched = (function() {
 		document.getElementById('main-menu').addDelegatedEventListener('click', function(el) {
 			return el.nodeName === 'LI' && el.classList.contains('menu-item-has-children');
 		}, function(e) {
-			e.preventDefault();
+			if (e.target.nodeName !== 'A' || e.target.href === '') {
+				e.preventDefault();
+			}
 			this.classList.toggle('children-visible');
 		});
 	};

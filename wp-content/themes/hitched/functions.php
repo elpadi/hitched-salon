@@ -31,7 +31,7 @@ function hitched_styles() {
 	if (is_front_page()) $queue = array_merge($queue, ['slideshow','grid','home']);
 	elseif (is_page()) {
 		$queue[] = 'pages';
-		wp_enqueue_style(Site::prefix($wp_the_query->query['pagename']));
+		wp_enqueue_style(Site::prefix($wp_the_query->query_vars['pagename']));
 	}
 	foreach ($queue as $style) wp_enqueue_style(Site::prefix($style));
 }

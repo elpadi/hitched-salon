@@ -1,6 +1,15 @@
 #post-27 {
 	text-align:center;
 }
+#post-27 .page-title {
+	margin-bottom:12px;
+}
+#post-27 > .entry-content {
+	max-width:880px;
+}
+#post-27 h2 + hr {
+	width:880px;
+}
 .team-member {
 	max-width:742px;
 	margin:0 auto 90px;

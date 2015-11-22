@@ -47,8 +47,8 @@ body,
 .bg--reg {
 	font-family:BrandonGrotesqueRegular,sans-serif;
 }
-strong,
-.bold,
+strong:not(.prox--light),
+.bold:not(.prox--light),
 .bg--bold {
 	font-family:BrandonGrotesqueBlackRegular,sans-serif;
 	font-weight:100;
@@ -63,6 +63,9 @@ article.page h2,
 }
 .prox--light {
 	font-family:proximanovalight,Arial,sans-serif;
+}
+.bold.prox--light {
+	font-weight:900;
 }
 .cursive,
 .bombshell {

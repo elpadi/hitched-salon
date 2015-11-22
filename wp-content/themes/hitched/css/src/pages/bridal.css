@@ -5,7 +5,7 @@
 .designers-gallery ul {
 	overflow:auto;
 	margin:50px auto 20px;
-	max-width:800px;
+	max-width:740px;
 }
 .designers-gallery li {
 	width:45%;
@@ -20,18 +20,31 @@
 }
 .designers-gallery ul img {
 	width:100%;
-	height:60vw;
-	max-height:480px;
+	height:45vw;
+	max-height:370px;
 	object-fit:cover;
 	object-position:left top;
 }
 .designers-gallery ul span {
 	display:block;
-	font-size:20px;
+	font-size:22px;
 	line-height:2;
 }
 .designers-gallery > a:last-child {
 	float:right;
 	margin-bottom:20px;
+	letter-spacing:2px;
+	position:relative;
+	padding-right:40px;
+	margin-right:50px;
+}
+.designers-gallery > a:last-child::after {
+	content:'>';
+	margin-left: 15px;
+	font-size: 13px;
+	transform: scale(2, 1) rotate(-90deg);
+	position: absolute;
+	top: -3px;
+	right: 12px;
 }
 

@@ -9,3 +9,7 @@ wp-content/*
 !wp-content/themes
 wp-content/themes/*
 !wp-content/themes/hitched
+wp-content/themes/hitched/css/*
+!wp-content/themes/hitched/css/src
+wp-content/themes/hitched/js/*
+!wp-content/themes/hitched/js/src

@@ -11,7 +11,10 @@ if (!empty($title)) {
 	<input name="hdFormVersion" type="hidden" id="hdFormVersion" value="10">
 	<input name="txtAutoAdd" type="hidden" id="txtAutoAdd" value="True">
 	<input type="hidden" name="ucSubscriptionManagmentForm$hdMailingListIds" id="ucSubscriptionManagmentForm_hdMailingListIds">
-	<input name="ucSubscriptionManagmentForm$dgFormFields$ctl04$ControlID_1698800" type="email" id="ucSubscriptionManagmentForm_dgFormFields_ctl04_ControlID_1698800" placeholder="EMAIL ADDRESS">
-	<input type="submit" name="ucSubscriptionManagmentForm$btnSubmit" value="Submit" id="ucSubscriptionManagmentForm_btnSubmit" class="clean-button">
+	<input
+		name="ucSubscriptionManagmentForm$dgFormFields$ctl04$ControlID_1698800" type="email" id="ucSubscriptionManagmentForm_dgFormFields_ctl04_ControlID_1698800" class="serif" placeholder="EMAIL ADDRESS"
+	><input
+		type="submit" name="ucSubscriptionManagmentForm$btnSubmit" value="Submit" id="ucSubscriptionManagmentForm_btnSubmit" class="clean-button bold"
+	>
 </form>
 <?php echo $after_widget; ?>

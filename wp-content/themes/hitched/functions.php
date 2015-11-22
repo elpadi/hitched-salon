@@ -61,3 +61,13 @@ add_filter('nav_menu_link_attributes', function($atts, $item, $args, $depth) {
 	}
 	return $atts;
 }, 10, 4);
+
+add_filter('dynamic_sidebar_params', function($params) {
+	if ($params[0]['id'] === 'footer') {
+		$params[0]['before_title'] = str_replace('class="', 'class="bombshell ', $params[0]['before_title']);
+		if ($params[0]['widget_name'] === 'Text') {
+			$params[0]['before_widget'] = str_replace('class="', 'class="filo--lin ', $params[0]['before_widget']);
+		}
+	}
+	return $params;
+});

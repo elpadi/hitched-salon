@@ -3,7 +3,7 @@
 		'theme_location' => 'secondary',
 		'container' => 'nav',
 		'container_id' => 'pages-menu',
-		'container_class' => 'menu-container uppercase tc',
+		'container_class' => 'menu-container prox--light uppercase tc',
 		'menu_class' => 'nav-menu horizontal-list',
 	)); ?>
 	<footer id="colophon" class="site-footer uppercase tc" role="contentinfo">

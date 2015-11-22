@@ -1,10 +1,11 @@
 .menu-container {
 	background-color:white;
-	border:1px solid #d4d753;
+	border-width:1px;
+	border-style:solid;
 	border-left-style:none;
 	border-right-style:none;
 	height:60px;
-	font-size:15px;
+	font-size:17px;
 	letter-spacing:3px;
 }
 .nav-menu a {
@@ -48,6 +49,7 @@
 
 #pages-menu {
 	letter-spacing:2px;
+	font-size:18px;
 }
 #pages-menu li::after {
 	content:'-';

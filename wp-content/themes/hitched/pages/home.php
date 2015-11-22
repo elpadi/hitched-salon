@@ -6,7 +6,7 @@
 		<?php endforeach; ?>
 	</div>
 </section>
-<section id="page-callouts" class="grid tc uppercase" data-col-count="3">
+<section id="page-callouts" class="grid prox--light tc uppercase" data-col-count="3">
 	<?php $i = 0; foreach (array_filter($images, function($img) { return strpos($img->post_title, 'Gallery') !== 0; }) as $img): ?>
 	<article class="grid__item last-row">
 		<div class="background single-background" style="background-image:url(<?php echo $img->guid; ?>);">&nbsp;</div>

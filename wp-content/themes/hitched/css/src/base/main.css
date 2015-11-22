@@ -2,6 +2,7 @@
 	box-sizing:border-box;
 }
 body {
+	font-size:14px;
 	margin:0;
 }
 #page {
@@ -23,6 +24,7 @@ body {
 .fr { float:right; }
 .uppercase { text-transform:uppercase; }
 .lowercase { text-transform:lowercase; }
+.bold { font-weight:900; }
 .no-text { overflow:hidden; white-space:nowrap; text-indent:110%; }
 .no-color { color:inherit; }
 .clearfix::after {

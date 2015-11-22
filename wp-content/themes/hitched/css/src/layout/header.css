@@ -2,17 +2,29 @@
 	background-color:#fef4f1;
 }
 .appointments-button {
+	position:relative;
 	color:white;
 	padding:12px 12px 0;
-	font-size:14px;
-	line-height:17px;
+	font-size:17px;
+	line-height:19px;
+	letter-spacing:2px;
 	margin-right:70px;
-	margin-bottom:25px;
+	margin-bottom:35px;
 	width:158px;
-	height:53px;
+	height:48px;
 	background-color:#9BB038;
 }
-
+.appointments-button::after {
+	content:'';
+	position:absolute;
+	left:0;
+	top:100%;
+	width:101%;
+	height:0;
+	padding-bottom:8%;
+	background:transparent url(../../../img/bottom-round-corners.svg) center bottom no-repeat;
+	background-size:100% auto;
+}
 #logo {
 	position:absolute;
 	left:50%;

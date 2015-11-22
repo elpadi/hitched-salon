@@ -5,6 +5,9 @@ body,
 .nav-menu a {
 	color:#4f5e6f;
 }
+#colophon #text-2 a {
+	border-color:#4f5e6f;
+}
 a,
 #post-16 li:nth-child(odd),
 #post-18 h4 {
@@ -12,5 +15,8 @@ a,
 }
 #post-8 li:nth-child(odd) {
 	color:#9ab42b;
+}
+.menu-container {
+	border-color:#d4d753;
 }
 

@@ -20,7 +20,7 @@ function hitched_styles() {
 		'base' => ['fonts','colors'],
 		'layout' => ['menu','header','footer'],
 		'sections' => ['slideshow','grid'],
-		'pages' => ['home','about-us','accessories','bridal','careers','happenings','faq'],
+		'pages' => ['home','about-us','accessories','bridal','careers','faq','happenings','happily-ever-hitched'],
 	];
 	foreach ($styles as $type => $files)
 		foreach ($files as $file) wp_register_style(Site::prefix($file), "$css_dir/$type/$file.css", [], false);
@@ -82,4 +82,14 @@ add_filter('dynamic_sidebar_params', function($params) {
 		}
 	}
 	return $params;
+});
+
+add_filter('the_content', function($s) {
+	if (is_page('happily-ever-hitched')) {
+		$parts = explode('<hr />', $s);
+		if (count($parts) > 1) {
+			return implode('', array_map(function($part) { return '<div class="column">'.$part.'</div>'; }, $parts));
+		}
+	}
+	return $s;
 });

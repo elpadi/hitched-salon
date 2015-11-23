@@ -1,0 +1,40 @@
+#post-14 {
+	margin-bottom:120px;
+}
+#post-14 .page-title {
+	margin-bottom:55px;
+}
+#post-14 > .entry-content {
+	max-width:790px;
+	overflow:auto;
+}
+#post-14 .column {
+	float:left;
+	width:48%;
+}
+#post-14 .column:nth-of-type(even) {
+	float:right;
+}
+#post-14 p {
+	margin-bottom:27px;
+}
+#post-14 img {
+	display:block;
+	width:100%;
+	height:auto;
+}
+#post-14 blockquote {
+	margin: 90px auto 0px;
+	line-height: 1.8;
+	max-width: 320px;
+}
+#post-14 blockquote + p {
+	margin-bottom: 60px;
+	padding: 0 13px 13px 4px;
+	border-bottom-style:solid;
+	border-bottom-width:3px;
+	display: inline-block;
+}
+#post-14 .scroll-button {
+	margin-top:40px;
+}

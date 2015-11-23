@@ -21,6 +21,9 @@ article.page h2 + hr {
 #post-8 li:nth-child(odd) {
 	color:#9ab42b;
 }
+#post-14 blockquote + p {
+	border-color:#9ab42b;
+}
 .menu-container {
 	border-color:#d4d753;
 }

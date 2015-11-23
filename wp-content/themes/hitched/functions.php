@@ -20,13 +20,17 @@ function hitched_styles() {
 		'base' => ['fonts','colors'],
 		'layout' => ['menu','header','footer'],
 		'sections' => ['slideshow','grid'],
-		'pages' => ['home','about-us','accessories','bridal','careers','faq','happenings','happily-ever-hitched','paper'],
+		'pages' => ['home','about-us','accessories','bridal','careers','faq','happenings','happily-ever-hitched','paper','sample-sale'],
 	];
 	foreach ($styles as $type => $files)
 		foreach ($files as $file) wp_register_style(Site::prefix($file), "$css_dir/$type/$file.css", [], false);
 	
+	wp_register_style(Site::prefix('lightbox'), $css_dir.'/../dist/vendor/lightbox.css', [], false);
 	wp_register_style(Site::prefix('pages'), $css_dir.'/pages/main.css', [], false);
+
+	if (is_page('sample-sale')) wp_enqueue_style(Site::prefix('lightbox'));
 	wp_enqueue_style(Site::prefix('main'), $css_dir.'/base/main.css', array_map(['Hitched\Hitched','prefix'], array_merge($styles['base'], $styles['layout'])), false);
+
 	$queue = [];
 	if (is_front_page()) $queue = array_merge($queue, ['slideshow','grid','home']);
 	elseif (is_page()) {
@@ -38,9 +42,16 @@ function hitched_styles() {
 }
 function hitched_scripts() {
 	$js_dir = get_stylesheet_directory_uri().'/js/src';
-	wp_register_script(Site::prefix('stdlib'), $js_dir.'/inc/stdlib.js', [], false);
-	wp_register_script(Site::prefix('hitched'), $js_dir.'/hitched/hitched.js', [Site::prefix('stdlib')], false);
-	wp_enqueue_script(Site::prefix('main'), $js_dir.'/main.js', [Site::prefix('hitched')], false);
+	$deps = [];
+
+	wp_register_script(Site::prefix('stdlib'), $js_dir.'/inc/stdlib.js', [], false, true);
+	wp_register_script(Site::prefix('hitched'), $js_dir.'/hitched/hitched.js', [Site::prefix('stdlib')], false, true);
+	wp_register_script(Site::prefix('lightbox'), $js_dir.'/../dist/vendor/lightbox-plus-jquery.min.js', [], false, true);
+
+	if (is_page('sample-sale')) $deps[] = Site::prefix('lightbox');
+	$deps[] = Site::prefix('hitched');
+
+	wp_enqueue_script(Site::prefix('main'), $js_dir.'/main.js', $deps, false, true);
 }
 function hitched_assets() {
 	if (MINIFY_ASSETS) {

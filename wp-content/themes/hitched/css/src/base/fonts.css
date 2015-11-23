@@ -48,6 +48,7 @@ body,
 	font-family:BrandonGrotesqueRegular,sans-serif;
 }
 #post-16 li:nth-child(odd),
+#post-8 li:nth-child(odd),
 strong:not(.prox--light),
 .bold:not(.prox--light),
 .bg--bold {

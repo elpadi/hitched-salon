@@ -52,6 +52,9 @@ article.page h2 + hr {
 	border-top-style:solid;
 	border-bottom-style:none;
 }
+article.page .entry-content a {
+	text-decoration:none;
+}
 
 a.scroll-button:last-child {
 	float:right;

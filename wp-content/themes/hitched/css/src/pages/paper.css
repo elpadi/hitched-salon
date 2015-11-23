@@ -1,0 +1,12 @@
+#post-92 {
+	margin-bottom:100px;
+}
+#post-92 > .entry-content {
+	max-width:744px;
+}
+#post-92 > .entry-content > p {
+	margin:5px auto;
+}
+#post-92 > .entry-content > p + p {
+	max-width:644px;
+}

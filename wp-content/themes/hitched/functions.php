@@ -20,7 +20,7 @@ function hitched_styles() {
 		'base' => ['fonts','colors'],
 		'layout' => ['menu','header','footer'],
 		'sections' => ['slideshow','grid'],
-		'pages' => ['home','about-us','accessories','bridal','careers','faq','happenings','happily-ever-hitched'],
+		'pages' => ['home','about-us','accessories','bridal','careers','faq','happenings','happily-ever-hitched','paper'],
 	];
 	foreach ($styles as $type => $files)
 		foreach ($files as $file) wp_register_style(Site::prefix($file), "$css_dir/$type/$file.css", [], false);

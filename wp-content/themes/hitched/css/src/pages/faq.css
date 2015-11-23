@@ -1,17 +1,47 @@
 /* FAQ */
+#post-16 {
+	margin-bottom:70px;
+}
+#post-16 > .entry-content {
+	max-width:740px;
+}
 #post-16 ul {
+	position:relative;
 	text-align:left;
 	line-height:1.75;
 }
 #post-16 li {
 	display:block;
 	margin-bottom:15px;
+	transition:opacity 0.3s, height 0.3s, margin 0.3s;
 }
 #post-16 li:nth-child(odd) {
-	font-weight:bold;
 	cursor:pointer;
 }
-#post-16 li:nth-child(even) {
+.js #post-16 li:nth-child(even) {
 	display:none;
+	opacity:0;
 }
-
+#post-16 li.current,
+#post-16 li.visible {
+	display:block !important;
+}
+#post-16 li.visible.current {
+	opacity:1 !important;
+}
+#post-16 li.current {
+	position:absolute;
+	width:100%;
+}
+#post-16 li.visible {
+	position:relative;
+}
+/* before showing */
+#post-16 li.current:not(.visible) {
+	height:auto;
+}
+/* before hiding */
+#post-16 li.visible:not(.current) {
+	height:0;
+	margin-bottom:0;
+}

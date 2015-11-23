@@ -6,6 +6,8 @@
 	var onLoad = function() {
 	};
 
+	document.documentElement.className = document.documentElement.className.replace('no-js','js');
+
 	if (document.readyState !== 'loading') {
 		console.log('content loaded, straight to dom ready');
 		onDOMReady();

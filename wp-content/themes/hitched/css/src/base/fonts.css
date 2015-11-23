@@ -47,6 +47,7 @@ body,
 .bg--reg {
 	font-family:BrandonGrotesqueRegular,sans-serif;
 }
+#post-16 li:nth-child(odd),
 strong:not(.prox--light),
 .bold:not(.prox--light),
 .bg--bold {

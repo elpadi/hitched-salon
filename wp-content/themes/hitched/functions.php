@@ -32,6 +32,7 @@ function hitched_styles() {
 	elseif (is_page()) {
 		$queue[] = 'pages';
 		wp_enqueue_style(Site::prefix($wp_the_query->query_vars['pagename']));
+		if ($wp_the_query->query_vars['pagename'] === 'maids') wp_enqueue_style(Site::prefix('bridal'));
 	}
 	foreach ($queue as $style) wp_enqueue_style(Site::prefix($style));
 }

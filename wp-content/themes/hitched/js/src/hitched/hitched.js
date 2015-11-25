@@ -1,4 +1,6 @@
 var Hitched = (function() {
+
+	var home_slideshow;
 	
 	var initMenu = function() {
 		document.getElementById('main-menu').addDelegatedEventListener('click', function(el) {
@@ -9,6 +11,11 @@ var Hitched = (function() {
 			}
 			this.classList.toggle('children-visible');
 		});
+	};
+
+	var initHome = function() {
+		home_slideshow = new HomeSlideshow(document.getElementById('home-gallery'));
+		home_slideshow.init();
 	};
 
 	var initFaq = function() {
@@ -45,11 +52,25 @@ var Hitched = (function() {
 
 	var init = function() {
 		initMenu();
+		if (document.body.classList.contains('home')) initHome();
 		if (document.body.classList.contains('page-id-16')) initFaq();
 	};
 
+	var onload = function() {
+		if (home_slideshow) {
+			home_slideshow.selectByIndex(0);
+			home_slideshow.container.classList.add('init');
+		}
+		onresize();
+	};
+
+	var onresize = function() {
+		if (home_slideshow) home_slideshow.resize();
+	};
+
 	return {
-		init: init
+		init: init,
+		onload: onload
 	};
 
 })();

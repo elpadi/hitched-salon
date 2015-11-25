@@ -42,15 +42,17 @@ function hitched_styles() {
 }
 function hitched_scripts() {
 	$js_dir = get_stylesheet_directory_uri().'/js/src';
-	$deps = [];
+	$deps = [Site::prefix('stdlib')];
 
 	wp_register_script(Site::prefix('stdlib'), $js_dir.'/inc/stdlib.js', [], false, true);
-	wp_register_script(Site::prefix('hitched'), $js_dir.'/hitched/hitched.js', [Site::prefix('stdlib')], false, true);
+	wp_register_script(Site::prefix('slideshow'), $js_dir.'/inc/slideshow.js', [], false, true);
+	wp_register_script(Site::prefix('hitched'), $js_dir.'/hitched/hitched.js', [], false, true);
 	wp_register_script(Site::prefix('lightbox'), $js_dir.'/../dist/vendor/lightbox-plus-jquery.min.js', [], false, true);
 
 	if (is_page('sample-sale')) $deps[] = Site::prefix('lightbox');
-	$deps[] = Site::prefix('hitched');
+	if (is_front_page()) $deps[] = Site::prefix('slideshow');
 
+	$deps[] = Site::prefix('hitched');
 	wp_enqueue_script(Site::prefix('main'), $js_dir.'/main.js', $deps, false, true);
 }
 function hitched_assets() {

@@ -31,4 +31,4 @@
 		'container_class' => 'site-width uppercase filo--lin',
 		'menu_class' => 'nav-menu horizontal-list',
 	)); ?></div>
-	<div id="content" class="site-content site-width">
+	<div id="content" class="site-content">

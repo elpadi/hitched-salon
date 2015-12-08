@@ -14,14 +14,14 @@ article.page > header .attachment-post-thumbnail {
 article.page > .entry-content {
 	max-width:704px;
 	margin:0 auto;
-	font-size:22px;
+	font-size:18px;
 }
 article.page h2 + hr {
 	width:704px;
 }
 article.page > .entry-content > h4,
 article.page > .entry-content > p {
-	max-width:810px;
+	max-width:800px;
 	margin-left:auto;
 	margin-right:auto;
 	line-height:1.8;

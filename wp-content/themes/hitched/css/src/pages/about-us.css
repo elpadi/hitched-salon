@@ -17,7 +17,7 @@
 	overflow:hidden;
 	line-height:1.5;
 	text-align:left;
-	font-size:20px;
+	font-size:18px;
 }
 .team-member:nth-of-type(1) {
 	margin-top:50px;
@@ -31,6 +31,6 @@
 	width:calc(100% - 264px);
 }
 .team-member > .info > p:first-child {
-	font-size:21px;
+	font-size:20px;
 }
 

@@ -10,20 +10,10 @@
 	line-height:17px;
 	letter-spacing:2px;
 	margin-right:70px;
-	margin-bottom:35px;
+	margin-bottom:25px;
 	width:158px;
-	height:46px;
-	background-color:#9BB038;
-}
-.appointments-button::after {
-	content:'';
-	position:absolute;
-	left:0;
-	top:99%;
-	width:101%;
-	height:0;
-	padding-bottom:8%;
-	background:transparent url(../../../img/bottom-round-corners.svg) center bottom no-repeat;
+	height:56px;
+	background:#9BB038 url(../../../img/appointments-bottom.png) center bottom no-repeat;
 	background-size:100% auto;
 }
 #logo {

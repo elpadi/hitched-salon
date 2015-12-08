@@ -4,6 +4,7 @@
 	};
 
 	var onLoad = function() {
+		Hitched.onload();
 	};
 
 	document.documentElement.className = document.documentElement.className.replace('no-js','js');

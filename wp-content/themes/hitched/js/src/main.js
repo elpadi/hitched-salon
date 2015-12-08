@@ -5,8 +5,13 @@
 
 	var onLoad = function() {
 		Hitched.onload();
+		Hitched.onresize();
 	};
 
+	var onResize = function() {
+		Hitched.onresize();
+	};
+	
 	document.documentElement.className = document.documentElement.className.replace('no-js','js');
 
 	if (document.readyState !== 'loading') {
@@ -19,4 +24,5 @@
 		document.addEventListener("DOMContentLoaded", onDOMReady);
 		window.addEventListener('load', onLoad);
 	}
+	window.addEventListener('resize', onResize);
 })();

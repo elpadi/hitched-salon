@@ -1,3 +1,6 @@
+body.home #content {
+	max-width:100%;
+}
 #post-2 .page-title,
 #post-2 .entry-content {
 	display:none;

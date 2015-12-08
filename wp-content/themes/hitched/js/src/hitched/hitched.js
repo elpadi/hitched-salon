@@ -1,5 +1,6 @@
 var Hitched = (function() {
 
+	var vw, vh;
 	var home_slideshow;
 	
 	var initMenu = function() {
@@ -65,12 +66,15 @@ var Hitched = (function() {
 	};
 
 	var onresize = function() {
-		if (home_slideshow) home_slideshow.resize();
-	};
+		vw = document.documentElement.clientWidth;
+		vh = document.documentElement.clientHeight;
+		if (home_slideshow) home_slideshow.resize(vw, vh);
+	}.throttle(100, { leading: false });
 
 	return {
 		init: init,
-		onload: onload
+		onload: onload,
+		onresize: onresize
 	};
 
 })();

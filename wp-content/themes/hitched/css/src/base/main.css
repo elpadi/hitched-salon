@@ -19,6 +19,8 @@ body.admin-bar {
 	display:block;
 	width:100%;
 	height:auto;
+	height:45vw;
+	object-fit:cover;
 }
 .site-width {
 	max-width:960px;

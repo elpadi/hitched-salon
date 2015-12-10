@@ -35,3 +35,19 @@
 #post-87 > .entry-content {
 	margin-bottom:10px;
 }
+
+@media (max-width:499px) {
+	.designers-gallery {
+		padding:0 20px;
+	}
+	.designers-gallery li {
+		float:none !important;
+		width:auto;
+	}
+	.designers-gallery ul img {
+		height:95vw;
+	}
+	.designers-gallery ul span {
+		font-size:20px;
+	}
+}

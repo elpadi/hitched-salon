@@ -5,11 +5,10 @@
 	margin-bottom:55px;
 }
 #post-14 > .entry-content {
-	max-width:540px;
-	font-size:30px;
+	font-size:22px;
 }
 #post-14 p {
-	margin-bottom:37px;
+	margin-bottom:25px;
 }
 #post-14 img {
 	display:block;
@@ -17,8 +16,11 @@
 	height:auto;
 }
 #post-14 blockquote {
-	margin: 90px auto 0px;
+	margin: 50px auto 0px;
 	line-height: 1.8;
+}
+#post-14 blockquote > p {
+	margin-bottom:10px;
 }
 #post-14 blockquote + p {
 	margin-bottom: 60px;
@@ -29,6 +31,22 @@
 }
 #post-14 .scroll-button {
 	margin-top:40px;
+}
+
+@media (min-width:500px) {
+	#post-14 > .entry-content {
+		max-width:540px;
+		font-size:30px;
+	}
+	#post-14 blockquote {
+		margin: 90px auto 0px;
+	}
+	#post-14 p {
+		margin-bottom:37px;
+	}
+	#post-14 blockquote > p {
+		margin-bottom:27px;
+	}
 }
 
 @media (min-width:640px) {

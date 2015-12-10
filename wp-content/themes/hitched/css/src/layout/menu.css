@@ -90,13 +90,10 @@
 }
 
 #burger-menu {
-	/*
-	display:none;
-	*/
-	font-size:24px;
-	letter-spacing:6px;
+	font-size:15px;
+	letter-spacing:4px;
 	position:absolute;
-	top:139px;
+	top:120px;
 	left:0;
 	width:100%;
 	padding:55px 0 10px;
@@ -122,14 +119,14 @@
 	padding:0;
 }
 #burger-menu a {
-	line-height:50px;
+	line-height:30px;
 }
 #burger-menu .sub-menu {
 	display:block;
 	letter-spacing:4px;
-	font-size:22px;
-	margin:10px 0 25px;
-	padding:30px 0 20px;
+	font-size:14px;
+	margin:10px 0 20px;
+	padding:23px 0 15px;
 }
 .burger {
 	display:inline-block;
@@ -139,18 +136,49 @@
 	width:60px;
 	height:60px;
 	background-size:30px auto;
-	margin-left:40px;
+	margin-left:6px;
 }
 
 #pages-menu {
 	letter-spacing:2px;
 }
-#pages-menu li::after {
-	content:'-';
-	margin:0 6px 0 13px;
-}
 #pages-menu li:last-child::after {
 	display:none;
+}
+
+@media (max-width:499px) {
+	#pages-menu {
+		height:auto;
+		padding:12px 0;
+	}
+	#pages-menu li {
+		display:block;
+	}
+	#pages-menu a {
+		line-height:36px;
+	}
+}
+@media (min-width:500px) {
+	.menu-container > .burger {
+		margin-left:40px;
+	}
+	#burger-menu {
+		top:139px;
+		font-size:24px;
+		letter-spacing:6px;
+	}
+	#burger-menu .sub-menu {
+		font-size:22px;
+		margin:10px 0 25px;
+		padding:30px 0 20px;
+	}
+	#burger-menu a {
+		line-height:50px;
+	}
+	#pages-menu li::after {
+		content:'-';
+		margin:0 6px 0 13px;
+	}
 }
 
 @media (min-width:918px) {

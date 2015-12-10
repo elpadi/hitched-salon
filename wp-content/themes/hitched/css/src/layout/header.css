@@ -6,23 +6,37 @@
 	position:relative;
 	display:inline-block;
 	color:white;
-	padding:16px 25px 8px;
-	font-size:21px;
+	padding:12px 20px 5px;
+	font-size:15px;
 	line-height:22px;
 	letter-spacing:3px;
-	margin-right:18px;
-	margin-bottom:60px;
+	margin-bottom:49px;
 	background:#9BB038 url(../../../img/appointments-bottom.png) center bottom no-repeat;
 	background-size:100% auto;
 }
 #logo {
 	position:absolute;
 	left:50%;
-	margin-left:-137px;
-	top:67px;
+	margin-left:-95px;
+	top:60px;
 }
 #logo img {
-	max-height:140px;
+	max-width:190px;
+}
+
+@media (min-width:500px) {
+	.appointments-button {
+		padding:16px 25px 8px;
+		font-size:21px;
+		margin-bottom:60px;
+	}
+	#logo {
+		top:67px;
+	}
+	#logo img {
+		max-height:140px;
+		max-width:100%;
+	}
 }
 
 @media (min-width:640px) {
@@ -34,9 +48,11 @@
 		margin-bottom:10px;
 		font-size:19px;
 		letter-spacing:2px;
+		margin-right:18px;
 	}
 	#logo {
 		top:22px;
+		margin-left:-112px;
 	}
 	#logo img {
 		max-height:none;

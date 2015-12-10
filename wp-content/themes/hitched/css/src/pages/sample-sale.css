@@ -96,6 +96,25 @@
 	color:inherit;
 }
 
+@media (max-width:499px) {
+	#post-10 {
+		margin-bottom:100px;
+	}
+	#post-10 .designers-gallery .col-2 li {
+		float:none !important;
+		width:auto;
+	}
+	#post-10 .designers-gallery li.portrait img {
+		width:70%;
+	}
+	#post-10 .designers-gallery .col-2 img {
+		height:70vw;
+	}
+	#post-10 .designers-gallery span {
+		font-size:16px;
+	}
+}
+
 @media (min-width:768px) {
 	#post-10 .designers-gallery .col-2 {
 		display:none;

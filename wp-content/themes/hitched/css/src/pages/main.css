@@ -1,9 +1,9 @@
 article.page {
-	margin-bottom:50px;
+	margin-bottom:30px;
 }
 article.page .page-title {
-	margin:75px 0 45px;
-	font-size:70px;
+	margin:40px 0 50px;
+	font-size:42px;
 	line-height:1.6;
 }
 article.page > header .attachment-post-thumbnail {
@@ -14,12 +14,12 @@ article.page > header .attachment-post-thumbnail {
 article.page > .entry-content {
 	max-width:724px;
 	margin:0 auto;
-	font-size:25px;
+	font-size:19px;
 	padding-right:10px;
 	padding-left:10px;
 }
 article.page h2 + hr {
-	width:704px;
+	display:none;
 }
 article.page > .entry-content > h4,
 article.page > .entry-content > p {
@@ -28,12 +28,16 @@ article.page > .entry-content > p {
 	margin-right:auto;
 	line-height:1.8;
 }
+article.page > .entry-content img {
+	max-width:100%;
+	height:auto;
+}
 article.page h2 {
 	border-width:1px;
 	border-style:solid;
 	text-transform:uppercase;
 	line-height:70px;
-	margin:50px auto 60px;
+	margin:50px auto 30px;
 	text-align:center;
 	letter-spacing:5px;
 	font-weight:100;
@@ -62,12 +66,11 @@ article.page .entry-content a {
 }
 
 a.scroll-button:last-child {
-	float:right;
-	margin-bottom:20px;
+	position:absolute;
+	bottom:-60px;
+	left:50%;
 	letter-spacing:2px;
-	position:relative;
-	padding-right:40px;
-	margin-right:50px;
+	transform:translateX(-50%);
 }
 a.scroll-button:last-child::after {
 	content:'>';
@@ -76,7 +79,41 @@ a.scroll-button:last-child::after {
 	transform: scale(2, 1) rotate(-90deg);
 	position: absolute;
 	top: -3px;
-	right: 12px;
+	right: -28px;
+}
+
+@media (min-width:500px) {
+	article.page {
+		margin-bottom:50px;
+	}
+	article.page .page-title {
+		font-size:70px;
+		margin:75px 0 45px;
+	}
+	article.page > .entry-content {
+		font-size:25px;
+	}
+	article.page h2 {
+		margin:50px auto 60px;
+	}
+	article.page h2 + hr {
+		display:block;
+		width:704px;
+	}
+	a.scroll-button:last-child {
+		float:right;
+		position:relative;
+		left:0;
+		bottom:0;
+		margin-bottom:20px;
+		letter-spacing:2px;
+		padding-right:40px;
+		margin-right:50px;
+		transform:none;
+	}
+	a.scroll-button:last-child::after {
+		right:12px;
+	}
 }
 
 @media (min-width:768px) {

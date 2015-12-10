@@ -20,8 +20,8 @@
 }
 .designers-gallery ul img {
 	width:100%;
-	height:45vw;
-	max-height:370px;
+	max-width:320px;
+	height:auto;
 	object-fit:cover;
 	object-position:left top;
 }
@@ -49,5 +49,12 @@
 	}
 	.designers-gallery ul span {
 		font-size:20px;
+	}
+}
+@media (min-width:500px) {
+	.designers-gallery ul img {
+		max-width:100%;
+		height:45vw;
+		max-height:370px;
 	}
 }

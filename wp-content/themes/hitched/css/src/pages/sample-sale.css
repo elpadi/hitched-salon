@@ -102,13 +102,27 @@
 	}
 	#post-10 .designers-gallery .col-2 li {
 		float:none !important;
+		display:block;
 		width:auto;
+	}
+	#post-10 .designers-gallery .col-2 li > a {
+		margin:0 auto;
+	}
+	#post-10 .designers-gallery .col-2 li.portrait > a {
+		max-width:320px;
+	}
+	#post-10 .designers-gallery .col-2 li.landscape > a {
+		max-width:420px;
 	}
 	#post-10 .designers-gallery li.portrait img {
 		width:70%;
+		height:auto;
+	}
+	#post-10 .designers-gallery li.landscape img {
+		width:100%;
+		height:auto;
 	}
 	#post-10 .designers-gallery .col-2 img {
-		height:70vw;
 	}
 	#post-10 .designers-gallery span {
 		font-size:16px;

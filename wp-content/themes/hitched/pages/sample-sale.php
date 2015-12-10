@@ -9,7 +9,7 @@ array_multisort($titles, SORT_ASC, SORT_REGULAR, $images);
 <div class="designers-gallery">
 	<?php for ($colcount = 3; $colcount > 1; $colcount--): ?><ul class="horizontal-list tc col-<?php echo $colcount; ?>">
 		<?php foreach ($images as $i => $img): $metadata = unserialize($img->_wp_attachment_metadata); $thumbnail = str_replace(wp_basename($metadata['file']), $metadata['sizes']['medium']['file'], $img->guid); ?>
-		<li data-col-index="<?php echo $i % $colcount; ?>" class="<?php echo $metadata['width'] / $metadata['height'] > 0.75 ? 'landscape' : 'portrait'; ?>"><a class="no-underline no-color" data-lightbox="sample-sale" data-title="<?php echo $img->post_excerpt; ?>" href="<?php echo $img->guid; ?>"><img src="<?php echo $thumbnail; ?>" alt=""><span><?php echo $img->post_title; ?><br><?php echo $img->post_excerpt; ?><br>(<?php echo $img->post_content; ?>)</span></a></li>
+		<li data-col-index="<?php echo $i % $colcount; ?>" class="<?php echo $metadata['width'] / $metadata['height'] > 1 ? 'landscape' : 'portrait'; ?>"><a class="no-underline no-color" data-lightbox="sample-sale" data-title="<?php echo $img->post_excerpt; ?>" href="<?php echo $img->guid; ?>"><img src="<?php echo $thumbnail; ?>" alt=""><span><?php echo $img->post_title; ?><br><?php echo $img->post_excerpt; ?><br>(<?php echo $img->post_content; ?>)</span></a></li>
 		
 		<?php if ($i % $colcount === $colcount - 1) echo '<li class="break">&nbsp;</li>'; endforeach; ?>
 		<?php /* $i = 0; $cp = count($by_size['portrait']); $cl = count($by_size['landscape']); while ($cp > 0 || $cl > 0): if (($i !== 1 && $cl > 0) || ($i === 1 && $cp > 0)): $img = array_shift($by_size[$i === 1 ? 'portrait' : 'landscape']); ?>

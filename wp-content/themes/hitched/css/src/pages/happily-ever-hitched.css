@@ -5,10 +5,10 @@
 	margin-bottom:55px;
 }
 #post-14 > .entry-content {
-	font-size:22px;
+	font-size:20px;
 }
 #post-14 p {
-	margin-bottom:25px;
+	margin:10px auto;
 }
 #post-14 img {
 	display:block;
@@ -36,13 +36,10 @@
 @media (min-width:500px) {
 	#post-14 > .entry-content {
 		max-width:540px;
-		font-size:30px;
+		font-size:24px;
 	}
 	#post-14 blockquote {
 		margin: 90px auto 0px;
-	}
-	#post-14 p {
-		margin-bottom:37px;
 	}
 	#post-14 blockquote > p {
 		margin-bottom:27px;
@@ -54,6 +51,9 @@
 		max-width:790px;
 		overflow:auto;
 		font-size:inherit;
+	}
+	#post-14 p {
+		margin:0 auto 37px;
 	}
 	#post-14 .column {
 		float:left;

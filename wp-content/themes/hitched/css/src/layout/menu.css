@@ -163,17 +163,17 @@
 		margin-left:40px;
 	}
 	#burger-menu {
-		top:139px;
-		font-size:24px;
-		letter-spacing:6px;
+		top:144px;
+		font-size:20px;
+		letter-spacing:5px;
 	}
 	#burger-menu .sub-menu {
-		font-size:22px;
-		margin:10px 0 25px;
-		padding:30px 0 20px;
+		font-size:19px;
+		margin:10px 0 20px;
+		padding:20px 0 15px;
 	}
 	#burger-menu a {
-		line-height:50px;
+		line-height:38px;
 	}
 	#pages-menu li::after {
 		content:'-';

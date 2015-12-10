@@ -7,8 +7,8 @@ array_multisort($titles, SORT_ASC, SORT_REGULAR, $images);
 ?>
 <h1 class="page-title cursive light tc lowercase">Gowns</h1>
 <div class="designers-gallery">
-	<ul class="horizontal-list tc">
-		<?php $colcount = 3; foreach ($images as $i => $img): $metadata = unserialize($img->_wp_attachment_metadata); $thumbnail = str_replace(wp_basename($metadata['file']), $metadata['sizes']['medium']['file'], $img->guid); ?>
+	<?php for ($colcount = 3; $colcount > 1; $colcount--): ?><ul class="horizontal-list tc col-<?php echo $colcount; ?>">
+		<?php foreach ($images as $i => $img): $metadata = unserialize($img->_wp_attachment_metadata); $thumbnail = str_replace(wp_basename($metadata['file']), $metadata['sizes']['medium']['file'], $img->guid); ?>
 		<li data-col-index="<?php echo $i % $colcount; ?>" class="<?php echo $metadata['width'] / $metadata['height'] > 0.75 ? 'landscape' : 'portrait'; ?>"><a class="no-underline no-color" data-lightbox="sample-sale" data-title="<?php echo $img->post_excerpt; ?>" href="<?php echo $img->guid; ?>"><img src="<?php echo $thumbnail; ?>" alt=""><span><?php echo $img->post_title; ?><br><?php echo $img->post_excerpt; ?><br>(<?php echo $img->post_content; ?>)</span></a></li>
 		
 		<?php if ($i % $colcount === $colcount - 1) echo '<li class="break">&nbsp;</li>'; endforeach; ?>
@@ -16,6 +16,6 @@ array_multisort($titles, SORT_ASC, SORT_REGULAR, $images);
 		<li data-col-index="<?php echo $i; ?>"><a class="no-underline no-color" data-lightbox="sample-sale" data-title="<?php echo $img->post_excerpt; ?>" href="<?php echo $img->guid; ?>"><img src="<?php echo $img->thumbnail; ?>" alt=""><span><?php echo $img->post_title; ?><br><?php echo $img->post_excerpt; ?><br>(<?php echo $img->post_content; ?>)</span></a></li>
 		<?php if ($i === 2): ?><li class="break">&nbsp;</li><?php endif; endif; ?>
 		<?php $i = ($i + 1) % 3; $cp = count($by_size['portrait']); $cl = count($by_size['landscape']); endwhile; */ ?>
-	</ul>
+	</ul><?php endfor; ?>
 	<a class="scroll-button prox--light bold uppercase no-underline no-color" href="#content">Back to top</a>
 </div>

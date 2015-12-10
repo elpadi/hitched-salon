@@ -2,9 +2,9 @@ article.page {
 	margin-bottom:50px;
 }
 article.page .page-title {
-	margin:55px 0 35px;
+	margin:75px 0 45px;
 	font-size:70px;
-	line-height:1;
+	line-height:1.6;
 }
 article.page > header .attachment-post-thumbnail {
 	display:block;
@@ -12,9 +12,11 @@ article.page > header .attachment-post-thumbnail {
 	height:auto;
 }
 article.page > .entry-content {
-	max-width:704px;
+	max-width:724px;
 	margin:0 auto;
-	font-size:18px;
+	font-size:25px;
+	padding-right:10px;
+	padding-left:10px;
 }
 article.page h2 + hr {
 	width:704px;
@@ -42,6 +44,9 @@ article.page h2 {
 	z-index: 2;
 	background-color: #FFF;
 	outline: 20px solid #FFF;
+}
+article.page p + h2 {
+	margin-top:20px;
 }
 article.page h2 + hr {
 	max-width:100%;
@@ -72,4 +77,13 @@ a.scroll-button:last-child::after {
 	position: absolute;
 	top: -3px;
 	right: 12px;
+}
+
+@media (min-width:768px) {
+	article.page .page-title {
+		margin:55px 0 35px;
+	}
+	article.page > .entry-content {
+		font-size:18px;
+	}
 }

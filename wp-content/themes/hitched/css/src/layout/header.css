@@ -5,14 +5,14 @@
 .appointments-button {
 	position:relative;
 	color:white;
-	padding:14px 12px 0;
-	font-size:14px;
-	line-height:17px;
+	padding:23px 12px 0;
+	font-size:19px;
+	line-height:22px;
 	letter-spacing:2px;
-	margin-right:70px;
-	margin-bottom:25px;
-	width:158px;
-	height:56px;
+	margin-right:18px;
+	margin-bottom:10px;
+	width:168px;
+	height:71px;
 	background:#9BB038 url(../../../img/appointments-bottom.png) center bottom no-repeat;
 	background-size:100% auto;
 }
@@ -22,4 +22,14 @@
 	margin-left:-137px;
 	top:22px;
 }
-
+@media (min-width:768px) {
+	.appointments-button {
+		padding:14px 12px 0;
+		font-size:14px;
+		line-height:17px;
+		margin-right:70px;
+		margin-bottom:25px;
+		width:158px;
+		height:56px;
+	}
+}

@@ -1,0 +1,6 @@
+<?xml version="1.0" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" title="Menu" viewBox="0 0 150 100" preserveAspectRatio="xMidYMid meet">
+	<line stroke="#617281" fill="none" stroke-width="20" x1="0" y1="10" x2="150" y2="10"/>
+	<line stroke="#617281" fill="none" stroke-width="20" x1="0" y1="50" x2="150" y2="50"/>
+	<line stroke="#617281" fill="none" stroke-width="20" x1="0" y1="90" x2="150" y2="90"/>
+</svg>

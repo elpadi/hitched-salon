@@ -71,10 +71,20 @@ var Hitched = (function() {
 		if (home_slideshow) home_slideshow.resize(vw, vh);
 	}.throttle(100, { leading: false });
 
+	var buttonTriggers = {
+
+		classnameToggler: function(button) {
+			var target = document.getElementById(button.dataset.target);
+			target.classList.toggle(button.dataset.classname);
+		}
+
+	};
+
 	return {
 		init: init,
 		onload: onload,
-		onresize: onresize
+		onresize: onresize,
+		buttonTriggers: buttonTriggers
 	};
 
 })();

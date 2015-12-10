@@ -28,9 +28,10 @@ body.admin-bar {
 	position:relative;
 }
 
-#logo { z-index:4; }
-#masthead { z-index:3; }
-.menu-container { z-index:2; }
+#logo { z-index:20; }
+#masthead { z-index:19; }
+.menu-container { z-index:18; }
+#burger-menu, #main-menu { z-index:17; }
 #content { z-index:1; }
 
 .tc { text-align:center; }

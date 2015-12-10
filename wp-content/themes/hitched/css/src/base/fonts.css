@@ -44,6 +44,7 @@
 body,
 .sans-serif,
 #main-menu .sub-menu,
+#burger-menu .sub-menu,
 .bg--reg {
 	font-family:BrandonGrotesqueRegular,sans-serif;
 }

@@ -24,9 +24,16 @@ article.page h2 + hr {
 #post-14 blockquote + p {
 	border-color:#9ab42b;
 }
+#burger-menu,
 .menu-container {
 	border-color:#d4d753;
 }
 #main-menu .sub-menu a {
+	color:white;
+}
+#burger-menu .sub-menu {
+	background-color:#9bb038;
+}
+#burger-menu .sub-menu a {
 	color:white;
 }

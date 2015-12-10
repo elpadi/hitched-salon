@@ -24,11 +24,19 @@
 		<div class="site-width"><a class="appointments-button filo--lin no-underline uppercase tc fr" href="mailto:info@hitchedsalon.com">Book Appointment</a></div>
 	</header><!-- .site-header -->
 	<a id="logo" href="<?php echo home_url(); ?>"><img src="<?php echo get_template_directory_uri(); ?>/img/logo.png" alt="Hitched Salon"></a>
-	<div class="menu-container"><?php wp_nav_menu(array(
+	<div class="menu-container wide"><?php wp_nav_menu(array(
 		'theme_location' => 'primary',
 		'container' => 'nav',
 		'container_id' => 'main-menu',
 		'container_class' => 'site-width uppercase filo--lin',
 		'menu_class' => 'nav-menu horizontal-list',
 	)); ?></div>
+	<div class="menu-container narrow"><button class="burger clean-button no-text single-background classnameToggler" data-target="burger-menu" data-classname="visible">Toggle menu</button></div>
+	<?php wp_nav_menu(array(
+		'theme_location' => 'primary',
+		'container' => 'nav',
+		'container_id' => 'burger-menu',
+		'container_class' => 'uppercase tc filo--lin',
+		'menu_class' => 'nav-menu',
+	)); ?>
 	<div id="content" class="site-content">

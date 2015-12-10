@@ -25,4 +25,10 @@
 		window.addEventListener('load', onLoad);
 	}
 	window.addEventListener('resize', onResize);
+
+	document.addEventListener('click', function(e) {
+		['classnameToggler'].forEach(function(className) {
+			if (e.target.classList.contains(className)) Hitched.buttonTriggers[className].call(this, e.target);
+		});
+	});
 })();

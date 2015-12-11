@@ -2,9 +2,13 @@
 .designers-gallery {
 	overflow:auto;
 }
+.designers-gallery + .entry-content {
+	padding-bottom:30px;
+	margin-bottom:60px !important;
+}
 .designers-gallery ul {
 	overflow:auto;
-	margin:50px auto 20px;
+	margin:50px auto 0;
 	max-width:740px;
 }
 .designers-gallery li {
@@ -14,6 +18,9 @@
 }
 .designers-gallery li:nth-child(even) {
 	float:right;
+}
+.designers-gallery li:nth-child(even) + li:last-child {
+	float:none;
 }
 .designers-gallery ul a {
 	display:block;

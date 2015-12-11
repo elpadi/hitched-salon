@@ -50,6 +50,9 @@
 	float:right;
 	clear:right;
 }
+#post-10 .designers-gallery .break + li:last-child {
+	float:none;
+}
 #post-10 .designers-gallery a {
 	display:block;
 }

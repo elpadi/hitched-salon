@@ -108,3 +108,10 @@ add_filter('the_content', function($s) {
 	}
 	return $s;
 });
+
+function the_split_content($head) {
+	$content = apply_filters('the_content', get_the_content());
+	$parts = explode('<hr />', $content);
+	echo $parts[!$head && count($parts) > 1 ? 1 : 0];
+}
+

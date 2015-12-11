@@ -101,14 +101,11 @@ a.scroll-button:last-child::after {
 		width:704px;
 	}
 	a.scroll-button:last-child {
-		float:right;
-		position:relative;
-		left:0;
+		left:auto;
+		right:50px;
 		bottom:0;
-		margin-bottom:20px;
 		letter-spacing:2px;
 		padding-right:40px;
-		margin-right:50px;
 		transform:none;
 	}
 	a.scroll-button:last-child::after {

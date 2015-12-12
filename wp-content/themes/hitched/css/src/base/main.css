@@ -15,7 +15,7 @@ body.admin-bar {
 }
 
 
-#main > .attachment-post-thumbnail {
+#main > .wp-post-image {
 	display:block;
 	width:100%;
 	height:auto;

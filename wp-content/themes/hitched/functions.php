@@ -8,8 +8,10 @@ function hitched_theme_setup() {
 		'primary' => 'Main Menu',
 		'secondary' => 'Pages Menu',
 	));
+	add_theme_support('title-tag');
 	add_theme_support('post-thumbnails');
 	set_post_thumbnail_size(960, 437, true);
+	foreach (range(2,4) as $x) add_image_size("{$x}x", 960 * $x);
 }
 add_action('after_setup_theme', 'hitched_theme_setup');
 

@@ -6,7 +6,7 @@ article.page .page-title {
 	font-size:42px;
 	line-height:1.6;
 }
-article.page > header .attachment-post-thumbnail {
+article.page > header .wp-post-image {
 	display:block;
 	width:100%;
 	height:auto;

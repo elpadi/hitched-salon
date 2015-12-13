@@ -1,14 +1,4 @@
 @font-face {
-    font-family: 'filosreg';
-    src: url('../../fonts/filosofia/filosreg-020415006EmigreWebOnly.eot');
-    src: url('../../fonts/filosofia/filosreg-020415006EmigreWebOnly.eot?#iefix') format('embedded-opentype'),
-         url('../../fonts/filosofia/filosreg-020415006EmigreWebOnly.woff2') format('woff2'),
-         url('../../fonts/filosofia/filosreg-020415006EmigreWebOnly.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-
-}
-@font-face {
     font-family: 'filosreglin';
     src: url('../../fonts/filosofia/filosreglin-020415006EmigreWebOnly.eot');
     src: url('../../fonts/filosofia/filosreglin-020415006EmigreWebOnly.eot?#iefix') format('embedded-opentype'),
@@ -19,24 +9,40 @@
 
 }
 @font-face {
-    font-family: 'proximanovalight';
-    src: url('../../fonts/proxima/ProximaNova-Light.otf');
-    font-weight: 100;
+    font-family: 'proxima_novalight';
+    src: url('../../fonts/proxima/proximanova-light-webfont.eot');
+    src: url('../../fonts/proxima/proximanova-light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../../fonts/proxima/proximanova-light-webfont.woff2') format('woff2'),
+         url('../../fonts/proxima/proximanova-light-webfont.woff') format('woff'),
+         url('../../fonts/proxima/proximanova-light-webfont.ttf') format('truetype'),
+         url('../../fonts/proxima/proximanova-light-webfont.svg#proxima_novalight') format('svg');
+    font-weight: normal;
     font-style: normal;
-
 }
-@font-face {font-family: 'BombshellPro';src: url('../../fonts/bombshell/2F76A9_0_0.eot');src: url('../../fonts/bombshell/2F76A9_0_0.eot?#iefix') format('embedded-opentype'),url('../../fonts/bombshell/2F76A9_0_0.woff2') format('woff2'),url('../../fonts/bombshell/2F76A9_0_0.woff') format('woff'),url('../../fonts/bombshell/2F76A9_0_0.ttf') format('truetype');}
+@font-face {
+	font-family: 'BombshellPro';
+	src: url('../../fonts/bombshell/2F76A9_0_0.eot');
+	src: url('../../fonts/bombshell/2F76A9_0_0.eot?#iefix') format('embedded-opentype'),
+		url('../../fonts/bombshell/2F76A9_0_0.woff2') format('woff2'),
+		url('../../fonts/bombshell/2F76A9_0_0.woff') format('woff'),
+		url('../../fonts/bombshell/2F76A9_0_0.ttf') format('truetype');
+}
 @font-face {
 	font-family: 'BrandonGrotesqueBlackRegular';
 	src: url('../../fonts/brandongrotesque_black/Brandon_blk-webfont.eot');
-	src: local('☺'), url('../../fonts/brandongrotesque_black/Brandon_blk-webfont.woff') format('woff'), url('../../fonts/brandongrotesque_black/Brandon_blk-webfont.ttf') format('truetype'), url('../../fonts/brandongrotesque_black/Brandon_blk-webfont.svg#webfont') format('svg');
+	src: local('☺'),
+		url('../../fonts/brandongrotesque_black/Brandon_blk-webfont.woff') format('woff'),
+		url('../../fonts/brandongrotesque_black/Brandon_blk-webfont.ttf') format('truetype'),
+		url('../../fonts/brandongrotesque_black/Brandon_blk-webfont.svg#webfont') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
 @font-face {
 	font-family: 'BrandonGrotesqueRegular';
 	src: url('../../fonts/brandongrotesque_regular/2B5D3B_1_0.eot');
-	src: local('☺'), url('../../fonts/brandongrotesque_regular/2B5D3B_1_0.woff') format('woff'), url('../../fonts/brandongrotesque_regular/2B5D3B_1_0.ttf') format('truetype');
+	src: local('☺'),
+		url('../../fonts/brandongrotesque_regular/2B5D3B_1_0.woff') format('woff'),
+		url('../../fonts/brandongrotesque_regular/2B5D3B_1_0.ttf') format('truetype');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -44,6 +50,7 @@
 body,
 .sans-serif,
 #main-menu .sub-menu,
+#burger-menu .sub-menu,
 .bg--reg {
 	font-family:BrandonGrotesqueRegular,sans-serif;
 }
@@ -55,16 +62,13 @@ strong:not(.prox--light),
 	font-family:BrandonGrotesqueBlackRegular,sans-serif;
 	font-weight:100;
 }
-.filo--reg {
-	font-family:filosreg,serif;
-}
 article.page h2,
 .serif,
 .filo--lin {
 	font-family:filosreglin,serif;
 }
 .prox--light {
-	font-family:proximanovalight,Arial,sans-serif;
+	font-family:proxima_novalight,Arial,sans-serif;
 }
 .bold.prox--light {
 	font-weight:900;

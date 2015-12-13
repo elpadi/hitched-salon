@@ -5,18 +5,10 @@
 	margin-bottom:55px;
 }
 #post-14 > .entry-content {
-	max-width:790px;
-	overflow:auto;
-}
-#post-14 .column {
-	float:left;
-	width:48%;
-}
-#post-14 .column:nth-of-type(even) {
-	float:right;
+	font-size:20px;
 }
 #post-14 p {
-	margin-bottom:27px;
+	margin:10px auto;
 }
 #post-14 img {
 	display:block;
@@ -24,9 +16,11 @@
 	height:auto;
 }
 #post-14 blockquote {
-	margin: 90px auto 0px;
+	margin: 50px auto 0px;
 	line-height: 1.8;
-	max-width: 320px;
+}
+#post-14 blockquote > p {
+	margin-bottom:10px;
 }
 #post-14 blockquote + p {
 	margin-bottom: 60px;
@@ -37,4 +31,41 @@
 }
 #post-14 .scroll-button {
 	margin-top:40px;
+}
+
+@media (min-width:500px) {
+	#post-14 > .entry-content {
+		max-width:540px;
+		font-size:24px;
+	}
+	#post-14 blockquote {
+		margin: 90px auto 0px;
+	}
+	#post-14 blockquote > p {
+		margin-bottom:27px;
+	}
+}
+
+@media (min-width:640px) {
+	#post-14 > .entry-content {
+		max-width:790px;
+		overflow:auto;
+		font-size:inherit;
+	}
+	#post-14 p {
+		margin:0 auto 37px;
+	}
+	#post-14 .column {
+		float:left;
+		width:48%;
+	}
+	#post-14 .column:nth-of-type(even) {
+		float:right;
+	}
+	#post-14 p {
+		margin-bottom:27px;
+	}
+	#post-14 blockquote {
+		max-width: 320px;
+	}
 }

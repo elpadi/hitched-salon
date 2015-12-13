@@ -6,7 +6,6 @@ body {
 	margin:0;
 }
 body.admin-bar {
-	background-color:black;
 }
 #content {
 	background-color:white;
@@ -16,15 +15,23 @@ body.admin-bar {
 }
 
 
+#main > .wp-post-image {
+	display:block;
+	width:100%;
+	height:auto;
+	height:45vw;
+	object-fit:cover;
+}
 .site-width {
 	max-width:960px;
 	margin:0 auto;
 	position:relative;
 }
 
-#logo { z-index:4; }
-#masthead { z-index:3; }
-.menu-container { z-index:2; }
+#logo { z-index:20; }
+#masthead { z-index:19; }
+.menu-container { z-index:18; }
+#burger-menu, #main-menu { z-index:17; }
 #content { z-index:1; }
 
 .tc { text-align:center; }

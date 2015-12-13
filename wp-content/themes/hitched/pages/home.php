@@ -1,4 +1,8 @@
-<?php $images = get_attached_media('image'); ?>
+<?php
+$images = get_attached_media('image');
+$titles = array_map(function($img) { return $img->post_title; }, $images);
+array_multisort($titles, SORT_ASC, SORT_REGULAR, $images);
+?>
 <section id="home-gallery" class="slideshow">
 	<div class="slideshow__images">
 		<?php foreach (array_filter($images, function($img) { return strpos($img->post_title, 'Gallery') === 0; }) as $img): ?>

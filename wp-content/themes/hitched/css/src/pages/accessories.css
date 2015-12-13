@@ -13,3 +13,12 @@
 	text-decoration:none;
 }
 
+@media (max-width:499px) {
+	#post-54 ul {
+		margin:30px auto;
+	}
+	#post-54 li {
+		display:block;
+		width:auto;
+	}
+}

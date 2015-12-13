@@ -5,13 +5,13 @@
 
 #colophon {
 	background-color:#fef4f1;
-	padding:20px 50px 20px;
+	padding:40px 0;
 }
 #colophon .widget {
-	display:inline-block;
-	vertical-align:top;
+	margin-bottom:50px;
 }
 #colophon .widget-title {
+	font-size:1.6em;
 	font-weight:400;
 	text-transform:lowercase;
 	line-height:1;
@@ -23,26 +23,12 @@
 	height:30px;
 	background-image:url(../../../img/icon-sprite.png);
 }
-#colophon #nav_menu-2,
-#colophon #mailinglist_widget-2 {
-	position:absolute;
-	top:0;
-}
-#colophon #nav_menu-2 {
-	left:0;
-	text-align:left;
-}
-#colophon #mailinglist_widget-2 {
-	right:0;
-	text-align:right;
-}
 /* Social */
 /* Address */
 #colophon #text-2 {
-	line-height:1.6;
-	font-size:14px;
+	line-height:1.8;
+	font-size:13px;
 	letter-spacing:2px;
-	padding-top:10px;
 }
 #colophon #text-2 a {
 	color:inherit;
@@ -87,3 +73,48 @@
 	background-position:102% 50%;
 }
 
+@media (min-width:500px) {
+	/* Social */
+	/* Address */
+	#colophon #text-2 {
+		font-size:18px;
+		letter-spacing:4px;
+	}
+	#colophon .widget-title {
+		font-size:2em;
+	}
+}
+
+@media (min-width:860px) {
+	#colophon {
+		padding:20px 50px 20px;
+	}
+	#colophon .widget {
+		display:inline-block;
+		vertical-align:top;
+		margin-bottom:0;
+	}
+	#colophon .widget-title {
+		font-size:1.5em;
+	}
+	#colophon #nav_menu-2,
+	#colophon #mailinglist_widget-2 {
+		position:absolute;
+		top:0;
+	}
+	#colophon #nav_menu-2 {
+		left:0;
+		text-align:left;
+	}
+	#colophon #mailinglist_widget-2 {
+		right:0;
+		text-align:right;
+	}
+	/* Social */
+	/* Address */
+	#colophon #text-2 {
+		font-size:14px;
+		letter-spacing:2px;
+		padding-top:10px;
+	}
+}

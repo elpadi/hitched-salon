@@ -8,16 +8,53 @@ function _inherits(subClass, superClass) { if (typeof superClass !== 'function' 
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
 
-Function.prototype.curry = function () {
-	for (var _len = arguments.length, saved = Array(_len), _key = 0; _key < _len; _key++) {
-		saved[_key] = arguments[_key];
-	}
+Object.defineProperty(Function.prototype, 'curry', {
+	value: function () {
+		for (var _len = arguments.length, saved = Array(_len), _key = 0; _key < _len; _key++) {
+			saved[_key] = arguments[_key];
+		}
 
-	var fn = this;
-	return function () {
-		return fn.apply(this, saved.concat(Array.from(arguments)));
-	};
-};
+		var fn = this;
+		return function () {
+			return fn.apply(this, saved.concat(Array.from(arguments)));
+		};
+	}
+});
+
+Object.defineProperty(Function.prototype, 'throttle', {
+	value: function(wait, options) {
+		var func = this;
+		var context, args, result;
+		var timeout = null;
+		var previous = 0;
+		if (!options) options = {};
+		var later = function() {
+			previous = options.leading === false ? 0 : Date.now();
+			timeout = null;
+			result = func.apply(context, args);
+			if (!timeout) context = args = null;
+		};
+		return function() {
+			var now = Date.now();
+			if (!previous && options.leading === false) previous = now;
+			var remaining = wait - (now - previous);
+			context = this;
+			args = arguments;
+			if (remaining <= 0 || remaining > wait) {
+				if (timeout) {
+					clearTimeout(timeout);
+					timeout = null;
+				}
+				previous = now;
+				result = func.apply(context, args);
+				if (!timeout) context = args = null;
+			} else if (!timeout && options.trailing !== false) {
+				timeout = setTimeout(later, remaining);
+			}
+			return result;
+		};
+	}
+});
 
 var Point = function Point(x, y) {
 	_classCallCheck(this, Point);
@@ -107,6 +144,7 @@ Object.defineProperty(HTMLImageElement.prototype, 'cover', {
 		if (!this.offsetParent) return;
 		var outer = new Rect(this.offsetParent.getBoundingClientRect());
 		var inner = new Rect(0, 0, this.naturalWidth, this.naturalHeight);
+		outer.x = outer.y = 0;
 		inner.cover(outer).center(outer);
 		// console.log(inner);
 		this.style.left = inner.x + 'px';

@@ -4,17 +4,25 @@ if (!empty($title)) {
 	echo $before_title, $title, $after_title;
 }
 ?>
-<form name="Form1" method="post" action="https://secure.campaigner.com/Campaigner/Public/Form.aspx?fid=476935&amp;viewsource=1" id="Form1" _lpchecked="1">
-	<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="">
-	<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="">
-	<input type="hidden" name="__VIEWSTATEENCRYPTED" id="__VIEWSTATEENCRYPTED" value="">
-	<input name="hdFormVersion" type="hidden" id="hdFormVersion" value="10">
-	<input name="txtAutoAdd" type="hidden" id="txtAutoAdd" value="True">
-	<input type="hidden" name="ucSubscriptionManagmentForm$hdMailingListIds" id="ucSubscriptionManagmentForm_hdMailingListIds">
-	<input
-		name="ucSubscriptionManagmentForm$dgFormFields$ctl04$ControlID_1698800" type="email" id="ucSubscriptionManagmentForm_dgFormFields_ctl04_ControlID_1698800" class="serif" placeholder="EMAIL ADDRESS"
-	><input
-		type="submit" name="ucSubscriptionManagmentForm$btnSubmit" value="Submit" id="ucSubscriptionManagmentForm_btnSubmit" class="clean-button bold"
-	>
+<form name="previewForm" method="post" action="https://secure.campaigner.com/CSB/Public/ProcessHostedForm.aspx" id="previewForm" enctype="multipart/form-data" target="_blank">
+<script type="text/javascript">
+//<![cdata[
+var theForm = document.forms['previewForm'];
+if (!theForm) {
+    theForm = document.previewForm;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+<input name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="5523BD75" type="hidden">
+<input name="1698800" maxlength="500" id="1698800" class="serif" placeholder="EMAIL ADDRESS" contactattributeid="1698800" type="email" required>
+<input name="SubmitButton" value="Submit" id="SubmitButton" class="clean-button bold" type="submit">
+<input name="FormInfo" id="FormInfo" value="2b881935-3e0d-4584-9059-773857c44691" type="hidden">
 </form>
 <?php echo $after_widget; ?>

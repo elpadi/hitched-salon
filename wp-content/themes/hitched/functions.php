@@ -8,8 +8,10 @@ function hitched_theme_setup() {
 		'primary' => 'Main Menu',
 		'secondary' => 'Pages Menu',
 	));
+	add_theme_support('title-tag');
 	add_theme_support('post-thumbnails');
 	set_post_thumbnail_size(960, 437, true);
+	foreach (range(2,4) as $x) add_image_size("{$x}x", 960 * $x);
 }
 add_action('after_setup_theme', 'hitched_theme_setup');
 
@@ -39,6 +41,7 @@ function hitched_styles() {
 		if ($wp_the_query->query_vars['pagename'] === 'maids') wp_enqueue_style(Site::prefix('bridal'));
 	}
 	foreach ($queue as $style) wp_enqueue_style(Site::prefix($style));
+	wp_enqueue_style(Site::prefix('980'), $css_dir.'/responsive/980vw.css', [], false, '(min-width: 980px)');
 }
 function hitched_scripts() {
 	$js_dir = get_stylesheet_directory_uri().'/js/src';
@@ -107,3 +110,10 @@ add_filter('the_content', function($s) {
 	}
 	return $s;
 });
+
+function the_split_content($head) {
+	$content = apply_filters('the_content', get_the_content());
+	$parts = explode('<hr />', $content);
+	echo $parts[!$head && count($parts) > 1 ? 1 : 0];
+}
+

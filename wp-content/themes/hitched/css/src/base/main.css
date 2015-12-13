@@ -7,6 +7,9 @@ body {
 }
 body.admin-bar {
 }
+a img {
+	border-style:none;
+}
 #content {
 	background-color:white;
 }

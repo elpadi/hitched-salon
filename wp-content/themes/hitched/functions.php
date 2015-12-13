@@ -117,3 +117,4 @@ function the_split_content($head) {
 	echo $parts[!$head && count($parts) > 1 ? 1 : 0];
 }
 
+add_filter('max_srcset_image_width', function($w) { return 0; });

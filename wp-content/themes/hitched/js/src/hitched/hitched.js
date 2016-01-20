@@ -66,6 +66,7 @@ var Hitched = (function() {
 	};
 
 	var onresize = function() {
+		if (home_slideshow) home_slideshow.resize();
 		vw = document.documentElement.clientWidth;
 		vh = document.documentElement.clientHeight;
 		if (home_slideshow) home_slideshow.resize(vw, vh);

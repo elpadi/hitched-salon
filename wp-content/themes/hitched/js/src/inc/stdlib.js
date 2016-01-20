@@ -122,7 +122,7 @@ var Rect = (function (_Point) {
 	return Rect;
 })(Point);
 
-Object.defineProperty(EventTarget.prototype, 'addDelegatedEventListener', {
+Object.defineProperty(Element.prototype, 'addDelegatedEventListener', {
 	value: function(type, test, listener) {
 		var last = this;
 		var _listener = function(e) {

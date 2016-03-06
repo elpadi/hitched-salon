@@ -18,20 +18,24 @@ add_action('after_setup_theme', 'hitched_theme_setup');
 function hitched_styles() {
 	global $wp_the_query;
 	$css_dir = get_stylesheet_directory_uri().'/css/src';
-	$styles = [
-		'base' => ['fonts','colors'],
-		'layout' => ['menu','header','footer'],
-		'sections' => ['slideshow','grid'],
-		'pages' => ['home','about-us','accessories','bridal','careers','faq','happenings','happily-ever-hitched','paper','sample-sale'],
-	];
-	foreach ($styles as $type => $files)
-		foreach ($files as $file) wp_register_style(Site::prefix($file), "$css_dir/$type/$file.css", [], false);
+	$root = dirname(WP_CONTENT_DIR);
+	$styles = [];
+	foreach (glob(get_stylesheet_directory()."/css/src/*", GLOB_ONLYDIR) as $dir) {
+		$dirname = basename($dir);
+		foreach (glob("$dir/*.css") as $file) {
+			$handle = Site::prefix(basename($file, '.css'));
+			if ($handle === Site::prefix('main')) continue;
+			$styles[$dirname][] = $handle;
+			$parts = explode('/src/', $file);
+			wp_register_style($handle, "$css_dir/".end($parts), [], false);
+		}
+	}
 	
 	wp_register_style(Site::prefix('lightbox'), $css_dir.'/../dist/vendor/lightbox.css', [], false);
 	wp_register_style(Site::prefix('pages'), $css_dir.'/pages/main.css', [], false);
 
 	if (is_page('sample-sale')) wp_enqueue_style(Site::prefix('lightbox'));
-	wp_enqueue_style(Site::prefix('main'), $css_dir.'/base/main.css', array_map(['Hitched\Hitched','prefix'], array_merge($styles['base'], $styles['layout'])), false);
+	wp_enqueue_style(Site::prefix('main'), $css_dir.'/base/main.css', array_merge($styles['base'], $styles['layout']), false);
 
 	$queue = [];
 	if (is_front_page()) $queue = array_merge($queue, ['slideshow','grid','home']);
@@ -39,6 +43,7 @@ function hitched_styles() {
 		$queue[] = 'pages';
 		wp_enqueue_style(Site::prefix($wp_the_query->query_vars['pagename']));
 		if ($wp_the_query->query_vars['pagename'] === 'maids') wp_enqueue_style(Site::prefix('bridal'));
+		if (strpos($wp_the_query->query_vars['pagename'], 'form')) wp_enqueue_style(Site::prefix('forms'));
 	}
 	foreach ($queue as $style) wp_enqueue_style(Site::prefix($style));
 	wp_enqueue_style(Site::prefix('980'), $css_dir.'/responsive/980vw.css', [], false, '(min-width: 980px)');

@@ -1,0 +1,112 @@
+fieldset {
+	border-style:none;
+	padding:0;
+	margin:20px auto;
+}
+input,
+textarea {
+	padding:3px 10px;
+	border:1px solid black;
+	line-height:30px;
+}
+label {
+	max-width:50%;
+}
+form th,
+.entry-content input[type="submit"],
+legend,
+.entry-content h3 {
+	font-family:BrandonGrotesqueBlackRegular;
+	font-size:23px;
+	font-weight:normal;
+}
+fieldset, input {
+	font-size:21px;
+}
+body article.page {
+	margin-bottom:90px;
+}
+article.page h1.page-title {
+	font-family:BrandonGrotesqueBlackRegular;
+	text-transform:uppercase;
+	font-size:23px;
+	margin-top:105px;
+}
+article.page > div.entry-content {
+	text-align:left;
+	max-width:100%;
+}
+fieldset > p {
+	margin-top:8px;
+	line-height:64px;
+	display:flex;
+	flex-wrap:wrap;
+}
+fieldset > p > span {
+	flex-basis:25%;
+	flex-grow:2;
+	flex-shrink:2;
+}
+fieldset > p > label,
+fieldset > p > span {
+	margin:0 6px;
+}
+fieldset > p > span > input,
+fieldset > p > span > textarea {
+	width:100%;
+}
+.bride-name { flex-basis:40%; }
+.cell-phone, .work-phone { flex-basis:19%; }
+.purchased-at-hitched { flex-basis:auto; }
+.bridesmaid-material, .bridesmaid-designer { flex-basis:20%; }
+.bridesmaids-count { flex-basis:3em; }
+.bridesmaids-description { flex-basis:auto; flex-grow:0; }
+
+form > p {
+	margin:30px auto 10px;
+	font-size:20px;
+}
+form > fieldset + p {
+	margin-top:40px;
+}
+form > h3 {
+	margin:30px auto 0;
+}
+form > h3 + p {
+	margin-top:20px;
+}
+form table {
+	width:100%;
+	border-collapse:collapse;
+	margin-bottom:40px;
+}
+table input {
+	width:200px;
+}
+form th {
+	padding:0 12px;
+	text-align:center;
+	font-size:18px;
+}
+form th:first-child {
+	text-align:left;
+}
+form td {
+	border-right:1px solid black;
+	border-bottom:1px solid black;
+	padding:5px 5px 10px;
+}
+form td:first-child,
+form td:last-child {
+	border-right-style:none;
+}
+form tr:last-child > td {
+	border-bottom-style:none;
+}
+.entry-content input[type="submit"] {
+	border-style:none;
+	text-transform:uppercase;
+	font-size:17px;
+	padding:7px 36px;
+	margin-top:24px;
+}

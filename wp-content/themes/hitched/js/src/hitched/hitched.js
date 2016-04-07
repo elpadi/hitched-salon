@@ -31,12 +31,22 @@ var Hitched = (function() {
 			row.parentNode.appendChild(clone);
 		}
 	};
+	
+	var updateBridesmaidsNames = function() {
+		document.querySelector('.wpcf7-form')["bridesmaids-names"].value = Array.from(document.getElementById('bridesmaid-row').parentNode.getElementsByTagName('input')).map(function(input) { return input.value; }).filter(function(value) { return value.length; }).join(',');
+	};
 
 	var initForms = function() {
 		var count = document.getElementById('bridesmaids-count');
-		if (count) count.addEventListener('change', function(e) {
-			updateBridesmaidsCount(count.value ? Math.max(1, parseInt(count.value, 10)) : 1);
-		});
+		if (count) {
+			count.addEventListener('change', function(e) {
+				updateBridesmaidsCount(count.value ? Math.max(1, parseInt(count.value, 10)) : 1);
+				updateBridesmaidsNames();
+			});
+			document.querySelector('.wpcf7-form').addEventListener('change', function(e) {
+				if (e.target.name.indexOf('bridesmaid-name') === 0) updateBridesmaidsNames();
+			});
+		}
 	};
 
 	var initFaq = function() {
@@ -75,7 +85,7 @@ var Hitched = (function() {
 		initMenu();
 		if (document.body.classList.contains('home')) initHome();
 		if (document.body.classList.contains('page-id-16')) initFaq();
-		if (document.getElementsByTagName('form').length) initForms();
+		if (document.getElementsByClassName('wpcf7-form').length) initForms();
 	};
 
 	var onload = function() {

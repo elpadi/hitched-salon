@@ -1,15 +1,10 @@
-fieldset {
-	border-style:none;
-	padding:0;
-	margin:20px auto;
-}
 .entry-content input,
 textarea {
 	padding:3px 10px;
 	border:1px solid black;
 	line-height:30px;
 }
-.entry-content label {
+.no-js .entry-content label {
 	max-width:50%;
 }
 form th,
@@ -37,20 +32,20 @@ article.page > div.entry-content {
 	text-align:left;
 	max-width:100%;
 }
+form {
+	text-align:center;
+}
+fieldset {
+	border-style:none;
+	padding:0;
+	margin:20px auto;
+}
+fieldset > legend {
+	width:100%;
+}
 fieldset > p {
 	margin-top:8px;
-	line-height:64px;
-	display:flex;
-	flex-wrap:wrap;
-}
-fieldset > p > span {
-	flex-basis:25%;
-	flex-grow:2;
-	flex-shrink:2;
-}
-fieldset > p > label,
-fieldset > p > span {
-	margin:0 6px;
+	line-height:44px;
 }
 fieldset > p > span > input,
 fieldset > p > span > textarea {
@@ -60,6 +55,11 @@ fieldset > p > span > textarea {
 	margin:30px auto 10px;
 	font-size:21px;
 	line-height:24px;
+	text-align:left;
+}
+/* Submit */
+.entry-content form > p:nth-last-of-type(1) {
+	text-align:center;
 }
 form > fieldset + p {
 	margin-top:40px;
@@ -78,13 +78,18 @@ form table {
 table input {
 	width:200px;
 }
+@media (max-width: 767px) {
+	form th, form td {
+		display:none;
+	}
+}
+form th:first-child, form td:first-child {
+	display:table-cell;
+}
 form th {
 	padding:0 12px;
 	text-align:center;
 	font-size:18px;
-}
-form th:first-child {
-	text-align:left;
 }
 form td {
 	border-right:1px solid black;
@@ -112,7 +117,6 @@ form tr:last-child > td {
 }
 .wpcf7-radio > span {
 	display:block;
-	line-height:1;
 	margin-bottom:30px;
 }
 .wpcf7-radio input,
@@ -124,12 +128,10 @@ form tr:last-child > td {
 	transform:scale(2);
 }
 .wpcf7-radio .wpcf7-list-item-label {
+	text-align:left;
 	display:inline-block;
+	line-height:1.3;
 	width:calc(100% - 60px);
-}
-.wpcf7-radio.inline-choices,
-.wpcf7-radio.inline-choices > span {
-	float:left;
 }
 .wpcf7-radio.inline-choices > span {
 	margin:0 30px;
@@ -139,39 +141,7 @@ form tr:last-child > td {
 }
 
 .entry-content form > p input[type="text"] {
-	line-height:1;
 	font-size:22px;
 	padding:0 10px;
 }
 
-/**
- * Party form fields
- */
-.bride-name { flex-basis:40%; }
-.bride-cell-phone, .bride-work-phone { flex-basis:19%; }
-.purchased-at-hitched { flex-basis:auto; }
-.bridesmaid-material, .bridesmaid-designer { flex-basis:20%; }
-.bridesmaids-count { flex-basis:3em; }
-.bridesmaids-description { flex-basis:auto; flex-grow:0; }
-
-/**
- * Bridesmaids form fields
- */
-.maids-name, .maids-email { flex-basis:30%; }
-.maids-street { flex-basis:45%; }
-.maids-unit { flex-basis:10%; }
-.maids-city { flex-basis:40%; }
-.maids-state { flex-basis:8%; }
-.maids-zip { flex-basis:20%; }
-.maids-home-phone, .maids-cell-phone, .maids-work-phone { flex-basis:19%; }
-.maids-wedding-date { flex-basis:8%; }
-.maids-bust, .maids-waist, .maids-hip, .maids-height, .maids-street-size, .maids-dress-size, .size-chart-initials { flex-basis:3em; flex-grow:0; }
-label[for="maids-bust"], label[for="maids-waist"], label[for="maids-hip"] { max-width:100%; }
-label[for="size-chart-initials"] { max-width:100%; flex-grow:2; text-align:right; }
-.maids-dress-style, .maids-dress-designer { flex-basis:30%; }
-.maids-dress-material, .maids-dress-color, .maids-dress-extra-length { flex-basis:20%; }
-.card-type { flex-basis:70%; }
-.card-address { flex-basis:50%; }
-.card-expiration { flex-basis:15%; }
-.card-zip { flex-basis:8%; }
-.card-phone, .card-email { flex-basis:20%; }

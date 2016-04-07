@@ -5,18 +5,24 @@ class Hitched extends \App {
 
 	protected static $SITE_PREFIX = 'hitched_';
 
-	public function siteInit() {
+	function siteInit() {
+	}
+
+	function siteSettings() {
+	}
+
+	function themeInit() {
 		$this->registerPostType('team', $singular='Person', $plural='Team', ['editor'], ['menu_icon' => 'dashicons-groups']);
 	}
 
-	public function themeSetup() {
+	function themeSetup() {
 		register_nav_menus(array(
 			'primary' => 'Main Menu',
 			'secondary' => 'Pages Menu',
 		));
 	}
 		
-	public function widgetsInit() {
+	function widgetsInit() {
 		register_sidebar(array(
 			'name' => 'Footer',
 			'id' => 'footer',

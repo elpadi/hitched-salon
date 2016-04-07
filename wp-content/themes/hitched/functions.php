@@ -46,6 +46,7 @@ function hitched_styles() {
 		if (strpos($wp_the_query->query_vars['pagename'], 'form')) wp_enqueue_style(Site::prefix('forms'));
 	}
 	foreach ($queue as $style) wp_enqueue_style(Site::prefix($style));
+	wp_enqueue_style(Site::prefix('768'), $css_dir.'/responsive/768vw.css', [], false, '(min-width: 768px)');
 	wp_enqueue_style(Site::prefix('980'), $css_dir.'/responsive/980vw.css', [], false, '(min-width: 980px)');
 }
 function hitched_scripts() {

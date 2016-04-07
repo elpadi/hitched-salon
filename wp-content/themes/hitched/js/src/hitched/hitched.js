@@ -19,6 +19,26 @@ var Hitched = (function() {
 		home_slideshow.init();
 	};
 
+	var updateBridesmaidsCount = function(count) {
+		var row = document.getElementById('bridesmaid-row'), clone;
+		var rows = Array.from(row.parentNode.children);
+		if (count < rows.length) rows.slice(count).forEach(function(row) { row.remove(); });
+		if (count > rows.length) for (var i = rows.length + 1; i <= count; i++) {
+			clone = row.cloneNode(true);
+			clone.id = '';
+			clone.querySelector('input').value = '';
+			clone.querySelector('input').name = row.querySelector('input').name.replace('1', i);
+			row.parentNode.appendChild(clone);
+		}
+	};
+
+	var initForms = function() {
+		var count = document.getElementById('bridesmaids-count');
+		if (count) count.addEventListener('change', function(e) {
+			updateBridesmaidsCount(count.value ? Math.max(1, parseInt(count.value, 10)) : 1);
+		});
+	};
+
 	var initFaq = function() {
 		var hasFinished = true;
 		document.getElementById('post-16').addDelegatedEventListener('click', function(el) {
@@ -55,6 +75,7 @@ var Hitched = (function() {
 		initMenu();
 		if (document.body.classList.contains('home')) initHome();
 		if (document.body.classList.contains('page-id-16')) initFaq();
+		if (document.getElementsByTagName('form').length) initForms();
 	};
 
 	var onload = function() {

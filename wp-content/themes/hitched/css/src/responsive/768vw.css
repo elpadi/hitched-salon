@@ -18,8 +18,12 @@ fieldset > p > span {
 .entry-content form > p:nth-last-of-type(1) {
 	text-align:left;
 }
+form th:first-child, form td:first-child {
+	max-width:160px;
+}
 form th:first-child {
 	text-align:left;
+	padding-left:0;
 }
 .wpcf7-radio .wpcf7-list-item-label {
 	line-height:inherit;

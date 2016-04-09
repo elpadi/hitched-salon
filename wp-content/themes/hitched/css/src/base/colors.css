@@ -5,8 +5,14 @@ body,
 .nav-menu a {
 	color:#4f5e6f;
 }
+.entry-content input,
+.entry-content textarea,
 #colophon #text-2 a {
 	border-color:#4f5e6f;
+}
+.entry-content input,
+.entry-content textarea {
+	background-color:#F6F8F9
 }
 a,
 #post-16 li:nth-child(odd),

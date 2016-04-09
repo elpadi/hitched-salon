@@ -124,3 +124,10 @@ function the_split_content($head) {
 }
 
 add_filter('max_srcset_image_width', function($w) { return 0; });
+
+add_filter('esc_html', function($safe, $raw) {
+	if (strpos($raw, 'pay') && strpos($raw, 'strong')) {
+		return $raw;
+	}
+	return $safe;
+}, 10, 2);

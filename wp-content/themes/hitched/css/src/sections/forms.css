@@ -4,7 +4,11 @@ textarea {
 	border-width:1px;
 	border-style:solid;
 	line-height:30px;
+	font-size:18px;
 	color:inherit;
+}
+.entry-content fieldset, .entry-content input[type="submit"] {
+	font-size:21px;
 }
 .no-js .entry-content label {
 	max-width:50%;
@@ -16,9 +20,6 @@ legend,
 	font-family:BrandonGrotesqueBlackRegular;
 	font-size:23px;
 	font-weight:normal;
-}
-.entry-content fieldset, .entry-content input {
-	font-size:21px;
 }
 body article.page {
 	margin-bottom:90px;
@@ -111,6 +112,7 @@ form tr:last-child > td {
 	font-size:17px;
 	padding:10px 38px;
 	margin-top:24px;
+	color:white;
 }
 
 .wpcf7-radio {
@@ -147,3 +149,21 @@ form tr:last-child > td {
 	padding:0 10px;
 }
 
+.wpcf7-response-output {
+	margin:1em 0 0;
+	padding:16px 38px 12px;
+	font-size:21px;
+}
+.wpcf7-form-control-wrap {
+	position:relative;
+}
+.wpcf7-not-valid-tip {
+	font-size:16px;
+	position: absolute;
+	width: 100%;
+	left: 0;
+	top: -31px;
+}
+.wpcf7-display-none {
+	display:none;
+}

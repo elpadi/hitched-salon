@@ -47,6 +47,9 @@ var Hitched = (function() {
 				if (e.target.name.indexOf('bridesmaid-name') === 0) updateBridesmaidsNames();
 			});
 		}
+		['maids-signature','signature-date','contract-signature','contract-date','card-signature','card-date'].map(function(id) {
+			return document.getElementById(id);
+		}).forEach(function(node) { if (node) node.setAttribute('readonly','readonly'); });
 	};
 
 	var initFaq = function() {

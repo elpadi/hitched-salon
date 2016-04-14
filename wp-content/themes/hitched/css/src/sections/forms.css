@@ -163,6 +163,7 @@ form tr:last-child > td {
 	width: 100%;
 	left: 0;
 	top: -31px;
+	white-space:nowrap;
 }
 .wpcf7-display-none {
 	display:none;

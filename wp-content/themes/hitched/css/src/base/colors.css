@@ -53,3 +53,20 @@ article.page h2 + hr {
 #burger-menu .sub-menu a {
 	color:white;
 }
+
+.widget_appointment-slider_widget,
+.pale-blue {
+	color: #617282;
+}
+.widget_appointment-slider_widget button {
+	border-color: #617282;
+}
+.widget_appointment-slider_widget button.selected,
+.widget_appointment-slider_widget button:hover,
+.sushi-green {
+	color: #9bb03b;
+}
+.widget_appointment-slider_widget button.selected,
+.widget_appointment-slider_widget button:hover {
+	border-color: #9bb03b;
+}

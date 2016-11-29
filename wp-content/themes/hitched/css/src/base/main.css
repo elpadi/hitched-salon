@@ -34,10 +34,11 @@ input {
 	position:relative;
 }
 
-#logo { z-index:20; }
 #masthead { z-index:19; }
 .menu-container { z-index:18; }
 #burger-menu, #main-menu { z-index:17; }
+.widget_appointment-slider_widget { z-index:3; }
+#logo { z-index:2; }
 #content { z-index:1; }
 
 .tc { text-align:center; }
@@ -66,12 +67,14 @@ input {
 	background-position:center center;
 	background-repeat:no-repeat;
 }
+.widget_appointment-slider_widget button,
 .clean-button {
 	text-transform:inherit;
 	outline-style:none;
 	background-color:transparent;
 	border-style:none;
 	padding:0;
+	cursor: pointer;
 }
 .absolute-center {
 	position:absolute;

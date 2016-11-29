@@ -7,7 +7,6 @@ abstract class BaseWidget extends \WP_Widget {
 	protected static $_title;
 	protected static $_description;
 
-	abstract protected function getFieldSanitizers();
 	abstract protected function getFormFields($instance);
 
 	/**
@@ -59,18 +58,24 @@ abstract class BaseWidget extends \WP_Widget {
 	 * @return array Updated safe values to be saved.
 	 */
 	public function update($new_instance, $old_instance) {
-		$instance = array();
-		$sanitizers = $this->getFieldSanitizers();
-		foreach ($new_instance as $key => $val) if (isset($sanitizers[$key])) $instance[$key] = call_user_func($sanitizers[$key], $val);
-		return $instance;
+		return $new_instance;
 	}
 
-	protected function textFormField($name, $value) {
+	protected static function sanitizer($type) {
+		switch ($type) {
+		case 'textarea': return 'esc_textarea';
+		}
+		return 'esc_attr';
+	}
+
+	protected function formField($name, $instance, $type='text', $default='') {
+		$value = empty($instance[$name]) ? $default : $instance[$name];
 		return [
 			'id' => $this->get_field_id($name),
 			'name' => $this->get_field_name($name),
-			'label' => _e(ucwords($name)),
-			'value' => esc_attr($value),
+			'label' => ucwords(str_replace('-', ' ', $name)),
+			'value' => call_user_func(self::sanitizer($type), $value),
+			'type' => $type,
 		];
 	}
 

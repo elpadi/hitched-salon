@@ -1,0 +1,6 @@
+<?php foreach ($fields as $key => $field): extract($field); ?>
+<p>
+	<label for="<?php echo $id; ?>"><?php echo $label; ?></label> 
+	<input class="widefat" id="<?php echo $id; ?>" name="<?php echo $name; ?>" type="text" value="<?php echo $value; ?>">
+</p>
+<?php endforeach; ?>

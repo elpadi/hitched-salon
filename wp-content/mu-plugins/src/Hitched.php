@@ -6,6 +6,7 @@ class Hitched extends \App {
 	protected static $SITE_PREFIX = 'hitched_';
 
 	function siteInit() {
+		add_action('widgets_init', [$this, 'widgetsInit']);
 	}
 
 	function siteSettings() {
@@ -23,16 +24,8 @@ class Hitched extends \App {
 	}
 		
 	function widgetsInit() {
-		register_sidebar(array(
-			'name' => 'Footer',
-			'id' => 'footer',
-			'description' => 'Footer widgets',
-			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</aside>',
-			'before_title'  => '<h2 class="widget-title">',
-			'after_title'   => '</h2>',
-		));
 		register_widget('Hitched\\Widgets\\MailingListWidget');
+		register_widget('Hitched\\Widgets\\AppointmentSliderWidget');
 	}
 
 }

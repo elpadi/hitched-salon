@@ -22,6 +22,7 @@
 <div id="page" class="hfeed site">
 	<header id="masthead" class="site-header clearfix" role="banner">
 		<div class="site-width uppercase tc"><a class="appointments-button filo--lin no-underline" href="mailto:info@hitchedsalon.com">Book Appointment</a></div>
+		<?php dynamic_sidebar('header-widgets'); ?>
 	</header><!-- .site-header -->
 	<a id="logo" href="<?php echo home_url(); ?>"><img src="<?php echo get_template_directory_uri(); ?>/img/logo.png" alt="Hitched Salon"></a>
 	<div class="menu-container wide"><?php wp_nav_menu(array(

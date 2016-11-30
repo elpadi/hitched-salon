@@ -73,7 +73,7 @@ function hitched_styles() {
 }
 function hitched_scripts() {
 	$js_dir = get_stylesheet_directory_uri().'/js/src';
-	$deps = [Site::prefix('stdlib')];
+	$deps = ['jquery',Site::prefix('stdlib')];
 
 	wp_register_script(Site::prefix('stdlib'), $js_dir.'/inc/stdlib.js', [], false, true);
 	wp_register_script(Site::prefix('slideshow'), $js_dir.'/inc/slideshow.js', [], false, true);
@@ -88,6 +88,8 @@ function hitched_scripts() {
 	wp_localize_script(Site::prefix('hitched'), 'WP', [
 		'HOME_URL' => get_option('home'),
 		'WP_URL' => get_option('siteurl'),
+		'AJAX_URL' => admin_url('admin-ajax.php'),
+		'LOADING_SPINNER_URL' => admin_url('images/loading.gif'),
 	]);
 	wp_enqueue_script(Site::prefix('main'), $js_dir.'/main.js', $deps, false, true);
 }

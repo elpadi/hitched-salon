@@ -79,6 +79,20 @@
 .widget_appointment-slider_widget button:not(.loading) {
 	background-image: none !important;
 }
+.widget_appointment-slider_widget .wpcf7 {
+	opacity: 0;
+	visibility: hidden;
+	transition: opacity 0.2s linear, visibility 0s 0.2s;
+}
+.widget_appointment-slider_widget .wpcf7.visible {
+	opacity: 1;
+	visibility: visible;
+	transition: opacity 0.2s linear, visibility 0s 0s;
+}
+.widget_appointment-slider_widget .wpcf7.hidden {
+	display: none;
+}
+
 #logo {
 	position:absolute;
 	left:50%;

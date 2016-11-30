@@ -29,8 +29,7 @@ abstract class BaseWidget extends \WP_Widget {
 	 * @param array $instance Saved values from database.
 	 */
 	public function widget($args, $instance) {
-		extract($args);
-		extract($instance);
+		extract(apply_filters('preprocess_widget_values', array_merge($args, $instance, ['widget' => $this])));
 		$widget = $this;
 		require(sprintf('%s/templates/widget-%s.php', MU_PLUGINS_DIR, static::$_name));
 	}
@@ -73,7 +72,7 @@ abstract class BaseWidget extends \WP_Widget {
 		return [
 			'id' => $this->get_field_id($name),
 			'name' => $this->get_field_name($name),
-			'label' => ucwords(str_replace('-', ' ', $name)),
+			'label' => ucwords(str_replace('_', ' ', $name)),
 			'value' => call_user_func(self::sanitizer($type), $value),
 			'type' => $type,
 		];

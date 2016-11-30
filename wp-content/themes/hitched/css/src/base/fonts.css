@@ -51,6 +51,7 @@ body,
 .sans-serif,
 #main-menu .sub-menu,
 #burger-menu .sub-menu,
+.widget_appointment-slider_widget .form-buttons button,
 .bg--reg {
 	font-family:BrandonGrotesqueRegular,sans-serif;
 }

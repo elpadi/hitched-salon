@@ -5,4 +5,10 @@ if (!empty($title)) {
 }
 ?>
 <?php echo $info; ?>
+<p><strong><?php echo $forms_prompt; ?></strong></p>
+<div class="form-buttons">
+	<?php foreach ($forms as $form): ?>
+	<button data-shortcode="<?php echo $form['shortcode']; ?>"><?php echo $form['title']; ?></button>
+	<?php endforeach; ?>
+</div>
 <?php echo $after_widget; ?>

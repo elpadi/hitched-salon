@@ -31,6 +31,10 @@
 .header-widget p:nth-of-type(1) {
 	font-size: 1.1em;
 }
+.header-widget p:nth-last-of-type(1) {
+	margin-top: 2em;
+	margin-bottom: 1.2em;
+}
 .widget_appointment-slider_widget {
 	position: absolute;
 	width: 100%;
@@ -47,11 +51,25 @@
 	position: absolute;
 	right: 0;
 	top: 0;
+	text-transform: uppercase !important;
+	font-size: 0.75em;
+	letter-spacing: 0.25em;
+	line-height: 1.5;
+	padding: 0.5em 0.7em 0.4em !important;
+	text-indent: 0.2em;
+}
+.widget_appointment-slider_widget .form-buttons {
+	word-spacing: -0.3em;
 }
 .widget_appointment-slider_widget button {
+	position: relative;
 	border-width: 1px;
 	border-style: solid !important;
-	padding: 1em !important;
+	padding: 0.3em 1em !important;
+	font-size: 1em;
+}
+.widget_appointment-slider_widget button:hover {
+	z-index: 2;
 }
 #logo {
 	position:absolute;

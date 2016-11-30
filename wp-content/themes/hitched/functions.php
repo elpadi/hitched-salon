@@ -21,7 +21,7 @@ add_action('widgets_init', function() {
 		'name'          => 'Header',
 		'id'            => 'header-widgets',
 		'description'   => 'Header widgets',
-		'before_widget' => '<section id="%1$s" class="widget header-widget %2$s"><div class="site-width"><button class="close-button">close</button>',
+		'before_widget' => '<section id="%1$s" class="widget header-widget %2$s"><div class="site-width"><button class="close-button uppercase serif">close</button>',
 		'after_widget'  => '</div></section>',
 		'before_title'  => '<h2 class="uppercase sushi-green">',
 		'after_title'   => '</h2>',

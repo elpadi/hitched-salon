@@ -84,24 +84,22 @@ var Hitched = (function() {
 		});
 	};
 
+	var initAppointmentSlider = function() {
+		var sliders = Array.from(document.getElementsByClassName('widget_appointment-slider_widget')).map(function(node) { return new AppointmentSlider(node); });
+		Array.from(document.getElementsByClassName('appointments-button')).forEach(function(button) {
+			button.addEventListener('click', function(e) {
+				e.preventDefault();
+				sliders.forEach(function(slider) { return slider.open(); });
+			});
+		});
+	};
+
 	var init = function() {
 		initMenu();
 		if (document.body.classList.contains('home')) initHome();
 		if (document.body.classList.contains('page-id-16')) initFaq();
 		if (document.getElementsByClassName('wpcf7-form').length) initForms();
-		Array.from(document.getElementsByClassName('appointments-button')).forEach(function(button) {
-			button.addEventListener('click', function(e) {
-				e.preventDefault();
-				Array.from(document.getElementsByClassName('widget_appointment-slider_widget')).forEach(function(node) {
-					node.classList.add('visible');
-				});
-			});
-		});
-		Array.from(document.getElementsByClassName('widget_appointment-slider_widget')).forEach(function(node) {
-			Array.from(node.getElementsByClassName('close-button')).forEach(function(button) {
-				button.addEventListener('click', function(e) { node.classList.remove('visible'); });
-			});
-		});
+		if (true) initAppointmentSlider();
 	};
 
 	var onload = function() {

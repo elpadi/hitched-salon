@@ -77,13 +77,18 @@ function hitched_scripts() {
 
 	wp_register_script(Site::prefix('stdlib'), $js_dir.'/inc/stdlib.js', [], false, true);
 	wp_register_script(Site::prefix('slideshow'), $js_dir.'/inc/slideshow.js', [], false, true);
+	wp_register_script(Site::prefix('appointment-slider'), $js_dir.'/hitched/appointment-slider.js', [], false, true);
 	wp_register_script(Site::prefix('hitched'), $js_dir.'/hitched/hitched.js', [], false, true);
 	wp_register_script(Site::prefix('lightbox'), $js_dir.'/../dist/vendor/lightbox-plus-jquery.min.js', [], false, true);
 
 	if (is_page('sample-sale')) $deps[] = Site::prefix('lightbox');
 	if (is_front_page()) $deps[] = Site::prefix('slideshow');
 
-	$deps[] = Site::prefix('hitched');
+	foreach (['appointment-slider','hitched'] as $name) $deps[] = Site::prefix($name);
+	wp_localize_script(Site::prefix('hitched'), 'WP', [
+		'HOME_URL' => get_option('home'),
+		'WP_URL' => get_option('siteurl'),
+	]);
 	wp_enqueue_script(Site::prefix('main'), $js_dir.'/main.js', $deps, false, true);
 }
 function hitched_assets() {

@@ -52,6 +52,8 @@ body,
 #main-menu .sub-menu,
 #burger-menu .sub-menu,
 .widget_appointment-slider_widget .form-buttons button,
+.header-widget fieldset label,
+.required-label::after,
 .bg--reg {
 	font-family:BrandonGrotesqueRegular,sans-serif;
 }
@@ -59,6 +61,8 @@ body,
 #post-8 li:nth-child(odd),
 strong:not(.prox--light),
 .header-widget h2,
+.header-widget label,
+.widget_appointment-slider_widget input[type="submit"],
 .bold:not(.prox--light),
 .bg--bold {
 	font-family:BrandonGrotesqueBlackRegular,sans-serif;

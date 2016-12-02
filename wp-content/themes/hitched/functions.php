@@ -57,6 +57,7 @@ function hitched_styles() {
 	wp_register_style(Site::prefix('pages'), $css_dir.'/pages/main.css', [], false);
 
 	if (is_page('sample-sale')) wp_enqueue_style(Site::prefix('lightbox'));
+	wp_enqueue_style(Site::prefix('forms'));
 	wp_enqueue_style(Site::prefix('main'), $css_dir.'/base/main.css', array_merge($styles['base'], $styles['layout']), false);
 
 	$queue = [];
@@ -65,7 +66,6 @@ function hitched_styles() {
 		$queue[] = 'pages';
 		wp_enqueue_style(Site::prefix($wp_the_query->query_vars['pagename']));
 		if ($wp_the_query->query_vars['pagename'] === 'maids') wp_enqueue_style(Site::prefix('bridal'));
-		if (strpos($wp_the_query->query_vars['pagename'], 'form')) wp_enqueue_style(Site::prefix('forms'));
 	}
 	foreach ($queue as $style) wp_enqueue_style(Site::prefix($style));
 	wp_enqueue_style(Site::prefix('768'), $css_dir.'/responsive/768vw.css', [], false, '(min-width: 768px)');

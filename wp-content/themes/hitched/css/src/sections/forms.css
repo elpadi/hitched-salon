@@ -1,18 +1,19 @@
-.entry-content input,
+.wpcf7-form input,
 textarea {
-	padding:3px 10px;
 	border-width:1px;
 	border-style:solid;
-	line-height:30px;
-	font-size:18px;
 	color:inherit;
+	padding: 0.5em;
+	line-height: 1.8;
 }
+/*
 .entry-content fieldset, .entry-content input[type="submit"] {
 	font-size:21px;
 }
 .no-js .entry-content label {
 	max-width:50%;
 }
+*/
 form th,
 .entry-content input[type="submit"],
 legend,
@@ -35,29 +36,39 @@ article.page > div.entry-content {
 	text-align:left;
 	max-width:100%;
 }
+.required-label::after {
+	content:' (required)';
+	font-weight: normal;
+	margin-left: 0.2em;
+	font-size: 1.1em;
+}
 form {
 	text-align:center;
+}
+.widget_appointment-slider_widget form {
+	text-align: left;
 }
 fieldset {
 	border-style:none;
 	padding:0;
-	margin:20px auto;
+}
+.header-widget fieldset {
+	margin-top: 1.4em;
 }
 fieldset > legend {
 	width:100%;
 }
+fieldset label {
+	font-size: 0.9em;
+}
 fieldset > p {
-	margin-top:8px;
-	line-height:44px;
 }
 fieldset > p > span > input,
 fieldset > p > span > textarea {
 	width:100%;
 }
 .entry-content form > p {
-	margin:30px auto 10px;
-	font-size:21px;
-	line-height:24px;
+	margin:3em auto 0.8em;
 	text-align:left;
 }
 /* Submit */
@@ -115,6 +126,9 @@ form tr:last-child > td {
 	color:white;
 }
 
+.wpcf7-form br {
+	display: none;
+}
 .wpcf7-radio {
 	display:block;
 	margin-top:20px;
@@ -167,4 +181,54 @@ form tr:last-child > td {
 }
 .wpcf7-display-none {
 	display:none;
+}
+
+
+.widget_appointment-slider_widget .wpcf7-form > p label,
+.widget_appointment-slider_widget legend {
+	font-size: 0.9em;
+}
+.widget_appointment-slider_widget .wpcf7-form > p label {
+	display: block;
+	margin-bottom: 0.1em;
+}
+.widget_appointment-slider_widget input[type="submit"] {
+	text-transform: uppercase;
+	padding: 0.5em 2em;
+	font-size: 0.9em;
+}
+.widget_appointment-slider_widget p > .wpcf7-form-control-wrap {
+	display: block;
+}
+.widget_appointment-slider_widget p > .wpcf7-form-control-wrap > input,
+.widget_appointment-slider_widget textarea {
+	width: 100%;
+}
+.widget_appointment-slider_widget select {
+	font-size: 0.7em;
+	padding: 0.2em 0.5em;
+	min-width: 300px;
+	margin-top: 0.6em;
+}
+.widget_appointment-slider_widget textarea {
+	margin-top: 0.6em;
+}
+
+fieldset.two-col p {
+	overflow: hidden;
+	margin-top: 0.2em;
+}
+fieldset.two-col span,
+fieldset.two-col label {
+	width: 49%;
+}
+fieldset.two-col span:nth-of-type(1),
+fieldset.two-col label:nth-of-type(1) {
+	float: left;
+	clear: left;
+}
+fieldset.two-col span:nth-of-type(2),
+fieldset.two-col label:nth-of-type(2) {
+	float: right;
+	clear: right;
 }

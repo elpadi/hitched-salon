@@ -18,20 +18,20 @@
 	background-size:100% auto;
 }
 .header-widget {
-	font-size: 1.25em;
+	font-size: 1.5em;
 	line-height: 1.2;
 }
 .header-widget h2 {
 	font-size: 1.2em;
 	margin-bottom: 0.5em;
 }
-.header-widget p {
+.header-widget .site-width > p {
 	margin: 0.4em 0;
 }
-.header-widget p:nth-of-type(1) {
+.header-widget .site-width > p:nth-of-type(1) {
 	font-size: 1.1em;
 }
-.header-widget p:nth-last-of-type(1) {
+.header-widget .site-width > p:nth-last-of-type(1) {
 	margin-top: 2em;
 	margin-bottom: 1.2em;
 }
@@ -58,9 +58,11 @@
 	line-height: 1.5;
 	padding: 0.5em 0.7em 0.4em !important;
 	text-indent: 0.2em;
+	font-weight: bold;
 }
 .widget_appointment-slider_widget .form-buttons {
 	word-spacing: -0.3em;
+	margin-bottom: 2em;
 }
 .widget_appointment-slider_widget button {
 	position: relative;
@@ -80,6 +82,7 @@
 	background-image: none !important;
 }
 .widget_appointment-slider_widget .wpcf7 {
+	max-width: 500px;
 	opacity: 0;
 	visibility: hidden;
 	transition: opacity 0.2s linear, visibility 0s 0.2s;
@@ -91,6 +94,9 @@
 }
 .widget_appointment-slider_widget .wpcf7.hidden {
 	display: none;
+}
+.widget_appointment-slider_widget .wpcf7 h2 {
+	font-size: 1.05em;
 }
 
 #logo {

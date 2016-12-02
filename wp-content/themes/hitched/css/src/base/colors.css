@@ -55,6 +55,7 @@ article.page h2 + hr {
 }
 
 .widget_appointment-slider_widget,
+.widget_appointment-slider_widget button,
 .pale-blue {
 	color: #617282;
 }

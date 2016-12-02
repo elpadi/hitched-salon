@@ -56,6 +56,8 @@ function hitched_styles() {
 	wp_register_style(Site::prefix('lightbox'), $css_dir.'/../dist/vendor/lightbox.css', [], false);
 	wp_register_style(Site::prefix('pages'), $css_dir.'/pages/main.css', [], false);
 
+	wpcf7_enqueue_styles();
+
 	if (is_page('sample-sale')) wp_enqueue_style(Site::prefix('lightbox'));
 	wp_enqueue_style(Site::prefix('forms'));
 	wp_enqueue_style(Site::prefix('main'), $css_dir.'/base/main.css', array_merge($styles['base'], $styles['layout']), false);
@@ -91,6 +93,7 @@ function hitched_scripts() {
 		'AJAX_URL' => admin_url('admin-ajax.php'),
 		'LOADING_SPINNER_URL' => admin_url('images/loading.gif'),
 	]);
+	wpcf7_enqueue_scripts();
 	wp_enqueue_script(Site::prefix('main'), $js_dir.'/main.js', $deps, false, true);
 }
 function hitched_assets() {

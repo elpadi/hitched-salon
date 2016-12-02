@@ -171,18 +171,16 @@ form tr:last-child > td {
 .wpcf7-form-control-wrap {
 	position:relative;
 }
-.wpcf7-not-valid-tip {
-	font-size:16px;
-	position: absolute;
-	width: 100%;
-	left: 0;
-	top: -31px;
-	white-space:nowrap;
+span.wpcf7-not-valid-tip {
 }
 .wpcf7-display-none {
 	display:none;
 }
-
+div.wpcf7-response-output {
+	border-style: none;
+	padding: 1em;
+	margin: 0;
+}
 
 .widget_appointment-slider_widget .wpcf7-form > p label,
 .widget_appointment-slider_widget legend {

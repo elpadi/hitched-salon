@@ -21,7 +21,7 @@ body,
 .wpcf7-validation-errors {
 	background-color:#ECA9A9;
 }
-.wpcf7-not-valid-tip {
+span.wpcf7-not-valid-tip {
 	color:#ECA9A9;
 }
 a,

@@ -57,6 +57,7 @@ Object.defineProperty(AppointmentSlider.prototype, 'onFormLoad', {
 			this.container.firstChild.appendChild(form);
 			setTimeout(function() {
 				button.appointmentForm = form;
+				jQuery(form).find('form').attr('action', location.href).wpcf7InitForm();
 				form.classList.add('visible');
 			}.bind(this), 100);
 		}

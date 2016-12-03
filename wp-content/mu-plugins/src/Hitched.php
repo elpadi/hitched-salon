@@ -1,7 +1,7 @@
 <?php
 namespace Hitched;
 
-class Hitched extends \App {
+class Hitched extends \MustUsePlugin\App {
 
 	protected static $SITE_PREFIX = 'hitched_';
 

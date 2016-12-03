@@ -1,5 +1,6 @@
 <?php
 namespace Hitched\Widgets;
+use MustUsePlugin\Widgets\BaseWidget;
 
 class MailingListWidget extends BaseWidget {
 

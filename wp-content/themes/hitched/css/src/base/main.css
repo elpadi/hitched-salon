@@ -7,6 +7,12 @@ body {
 }
 body.admin-bar {
 }
+a img {
+	border-style:none;
+}
+input {
+	outline-style:none;
+}
 #content {
 	background-color:white;
 }
@@ -28,10 +34,11 @@ body.admin-bar {
 	position:relative;
 }
 
-#logo { z-index:20; }
 #masthead { z-index:19; }
 .menu-container { z-index:18; }
 #burger-menu, #main-menu { z-index:17; }
+.widget_appointment-slider_widget { z-index:3; }
+#logo { z-index:2; }
 #content { z-index:1; }
 
 .tc { text-align:center; }
@@ -60,12 +67,14 @@ body.admin-bar {
 	background-position:center center;
 	background-repeat:no-repeat;
 }
+.widget_appointment-slider_widget button,
 .clean-button {
 	text-transform:inherit;
 	outline-style:none;
 	background-color:transparent;
 	border-style:none;
 	padding:0;
+	cursor: pointer;
 }
 .absolute-center {
 	position:absolute;
@@ -99,3 +108,12 @@ h4 {
 	margin-top:0;
 	margin-bottom:1em;
 }
+.screen-reader-response,
+.screen-reader-text {
+	clip: rect(1px, 1px, 1px, 1px);
+	position: absolute !important;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+}
+

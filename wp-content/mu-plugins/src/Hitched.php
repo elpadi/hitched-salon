@@ -1,7 +1,7 @@
 <?php
 namespace Hitched;
 
-class Hitched extends \App {
+class Hitched extends \MustUsePlugin\App {
 
 	protected static $SITE_PREFIX = 'hitched_';
 
@@ -15,24 +15,22 @@ class Hitched extends \App {
 	public function siteInit() {
 	}
 
-	public function themeSetup() {
+	function themeSetup() {
 		register_nav_menus(array(
 			'primary' => 'Main Menu',
 			'secondary' => 'Pages Menu',
 		));
 	}
 		
-	public function widgetsInit() {
-		register_sidebar(array(
-			'name' => 'Footer',
-			'id' => 'footer',
-			'description' => 'Footer widgets',
-			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</aside>',
-			'before_title'  => '<h2 class="widget-title">',
-			'after_title'   => '</h2>',
-		));
+	public function ajaxShortcode() {
+		$shortcode = $_POST['shortcode'];
+		echo do_shortcode(str_replace('\"', '"', $shortcode));
+		wp_die();
+	}
+
+	function widgetsInit() {
 		register_widget('Hitched\\Widgets\\MailingListWidget');
+		register_widget('Hitched\\Widgets\\AppointmentSliderWidget');
 	}
 
 }

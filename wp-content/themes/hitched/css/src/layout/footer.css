@@ -43,16 +43,16 @@
 	display:none;
 }
 /* Mailing List */
-#mailinglist_widget-2 input {
+#mailing-list_widget-2 input {
 	height:22px;
 	line-height:22px;
 }
-#mailinglist_widget-2 input[type="email"] {
+#mailing-list_widget-2 input[type="email"] {
 	padding-left:8px;
 	font-size:10px;
 	width:135px;
 }
-#mailinglist_widget-2 input[type="submit"] {
+input[type="submit"] {
 	color:white;
 	background-color:#8aa42b;
 	padding:0 8px;
@@ -98,7 +98,7 @@
 		font-size:1.5em;
 	}
 	#colophon #nav_menu-2,
-	#colophon #mailinglist_widget-2 {
+	#colophon #mailing-list_widget-2 {
 		position:absolute;
 		top:0;
 	}
@@ -106,7 +106,7 @@
 		left:0;
 		text-align:left;
 	}
-	#colophon #mailinglist_widget-2 {
+	#colophon #mailing-list_widget-2 {
 		right:0;
 		text-align:right;
 	}

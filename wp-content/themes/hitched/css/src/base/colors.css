@@ -5,8 +5,24 @@ body,
 .nav-menu a {
 	color:#4f5e6f;
 }
+.entry-content input,
+.entry-content textarea,
 #colophon #text-2 a {
 	border-color:#4f5e6f;
+}
+.wpcf7-response-output,
+.entry-content input,
+.entry-content textarea {
+	background-color:#F6F8F9
+}
+.wpcf7-mail-sent-ok {
+	background-color:#B8E294;
+}
+.wpcf7-validation-errors {
+	background-color:#ECA9A9;
+}
+span.wpcf7-not-valid-tip {
+	color:#ECA9A9;
 }
 a,
 #post-16 li:nth-child(odd),
@@ -36,4 +52,22 @@ article.page h2 + hr {
 }
 #burger-menu .sub-menu a {
 	color:white;
+}
+
+.widget_appointment-slider_widget,
+.widget_appointment-slider_widget button,
+.pale-blue {
+	color: #617282;
+}
+.widget_appointment-slider_widget button {
+	border-color: #617282;
+}
+.widget_appointment-slider_widget button.selected,
+.widget_appointment-slider_widget button:hover,
+.sushi-green {
+	color: #9bb03b;
+}
+.widget_appointment-slider_widget button.selected,
+.widget_appointment-slider_widget button:hover {
+	border-color: #9bb03b;
 }

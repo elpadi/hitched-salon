@@ -19,6 +19,39 @@ var Hitched = (function() {
 		home_slideshow.init();
 	};
 
+	var updateBridesmaidsCount = function(count) {
+		var row = document.getElementById('bridesmaid-row'), clone;
+		var rows = Array.from(row.parentNode.children);
+		if (count < rows.length) rows.slice(count).forEach(function(row) { row.remove(); });
+		if (count > rows.length) for (var i = rows.length + 1; i <= count; i++) {
+			clone = row.cloneNode(true);
+			clone.id = '';
+			clone.querySelector('input').value = '';
+			clone.querySelector('input').name = row.querySelector('input').name.replace('1', i);
+			row.parentNode.appendChild(clone);
+		}
+	};
+	
+	var updateBridesmaidsNames = function() {
+		document.querySelector('.wpcf7-form')["bridesmaids-names"].value = Array.from(document.getElementById('bridesmaid-row').parentNode.getElementsByTagName('input')).map(function(input) { return input.value; }).filter(function(value) { return value.length; }).join(',');
+	};
+
+	var initForms = function() {
+		var count = document.getElementById('bridesmaids-count');
+		if (count) {
+			count.addEventListener('change', function(e) {
+				updateBridesmaidsCount(count.value ? Math.max(1, parseInt(count.value, 10)) : 1);
+				updateBridesmaidsNames();
+			});
+			document.querySelector('.wpcf7-form').addEventListener('change', function(e) {
+				if (e.target.name.indexOf('bridesmaid-name') === 0) updateBridesmaidsNames();
+			});
+		}
+		['maids-signature','signature-date','contract-signature','contract-date','card-signature','card-date'].map(function(id) {
+			return document.getElementById(id);
+		}).forEach(function(node) { if (node) node.setAttribute('readonly','readonly'); });
+	};
+
 	var initFaq = function() {
 		var hasFinished = true;
 		document.getElementById('post-16').addDelegatedEventListener('click', function(el) {
@@ -51,10 +84,22 @@ var Hitched = (function() {
 		});
 	};
 
+	var initAppointmentSlider = function() {
+		var sliders = Array.from(document.getElementsByClassName('widget_appointment-slider_widget')).map(function(node) { return new AppointmentSlider(node); });
+		Array.from(document.getElementsByClassName('appointments-button')).forEach(function(button) {
+			button.addEventListener('click', function(e) {
+				e.preventDefault();
+				sliders.forEach(function(slider) { return slider.open(); });
+			});
+		});
+	};
+
 	var init = function() {
 		initMenu();
 		if (document.body.classList.contains('home')) initHome();
 		if (document.body.classList.contains('page-id-16')) initFaq();
+		if (document.getElementsByClassName('wpcf7-form').length) initForms();
+		if (WP.USER_ID != 0) initAppointmentSlider();
 	};
 
 	var onload = function() {

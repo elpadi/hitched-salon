@@ -5,8 +5,14 @@ class Hitched extends \App {
 
 	protected static $SITE_PREFIX = 'hitched_';
 
-	public function siteInit() {
+	protected function siteSettings() {
+	}
+
+	public function themeInit() {
 		$this->registerPostType('team', $singular='Person', $plural='Team', ['editor'], ['menu_icon' => 'dashicons-groups']);
+	}
+	
+	public function siteInit() {
 	}
 
 	public function themeSetup() {

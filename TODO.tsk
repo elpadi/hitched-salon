@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?taskcoach release="1.4.3" tskversion="37"?>
+
+<tasks>
+<task creationDateTime="2017-02-25 23:35:50.062663" id="0cb0b1f2-fbdd-11e6-a218-0022fa33187c" modificationDateTime="2017-02-25 23:36:11.838638" status="1" subject="Thank you pages">
+<description>
+Redirect to thank you page after filling the form, which includes payment link to https://gateway.1directconnect.com/ws/hosted2.aspx?Username=sfYfVzB7dpTUTiDX0RB4lg%3d%3d&amp;Password=ozP6a9KbIe62iwJLVDl%2f1t%2f38b2G5e6r0nNwEkzE5K53tSm%2boVVvORjFJaM%2bjaqJ&amp;MerchantKey=17138&amp;Amount=1.00
+</description>
+</task>
+<task creationDateTime="2017-02-25 23:36:20.815693" id="1f053b2a-fbdd-11e6-a218-0022fa33187c" modificationDateTime="2017-02-25 23:36:24.828865" status="1" subject="Create html form print out" />
+<task creationDateTime="2017-02-25 23:34:36.650079" id="e0eed40e-fbdc-11e6-a218-0022fa33187c" modificationDateTime="2017-02-25 23:35:14.142722" status="1" subject="Fix look of order forms" />
+<task creationDateTime="2017-02-25 23:35:17.655828" id="f95fcdb8-fbdc-11e6-a218-0022fa33187c" modificationDateTime="2017-02-25 23:35:41.824269" status="1" subject="Signature / date fields">
+<description>
+The signature / date fieldset only made sense to me as part of a print out of the form, that would happen at the store after someone submits the form. What do you have in mind to use as signature?
+</description>
+</task>
+<syncmlconfig>
+<TaskCoach-0000015a78b2cdb98bfcaedd007f000000010001>
+<spds>
+<sources>
+<TaskCoach-0000015a78b2cdb98bfcaedd007f000000010001.Tasks />
+<TaskCoach-0000015a78b2cdb98bfcaedd007f000000010001.Notes />
+</sources>
+<syncml>
+<Auth />
+<Conn />
+</syncml>
+</spds>
+</TaskCoach-0000015a78b2cdb98bfcaedd007f000000010001>
+</syncmlconfig>
+<guid>
+0000015a78b2cdb98bfcaedd007f000000010001
+</guid>
+</tasks>

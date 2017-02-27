@@ -21,8 +21,27 @@ article.page > div.entry-content {
 	text-align: left;
 	max-width: 100%;
 }
+form p {
+	clear: both;
+}
 h3 {
-	text-align: center;
+}
+label,
+label > .wpcf7-form-control-wrap {
+	vertical-align: middle;
+}
+label {
+	white-space: nowrap;
+	display: flex;
+}
+label > .wpcf7-form-control-wrap {
+	float: right;
+	margin-left: 5px;
+	margin-top: -0.4em;
+	flex-grow: 2;
+}
+label .wpcf7-form-control {
+	width: 100%;
 }
 /* End Basic */
 
@@ -43,31 +62,6 @@ article.page h1.page-title {
 	text-align: center;
 }
 /* End Headers */
-
-/*
-fieldset {
-	border-style: none;
-	padding: 0;
-	margin: 20px auto;
-}
-fieldset > h2 {
-	width: 100%;
-}
-fieldset > p {
-	margin-top: 8px;
-	line-height: 44px;
-}
-fieldset > p > span > input,
-fieldset > p > span > textarea {
-	width: 100%;
-}
-.entry-content form > p {
-	margin: 30px auto 10px;
-	font-size: 21px;
-	line-height: 24px;
-	text-align: left;
-}
-*/
 
 /* Submit */
 .entry-content form > p: nth-last-of-type(1) {
@@ -149,8 +143,8 @@ span.wpcf7-list-item {
 	display: block;
 	margin-bottom: 30px;
 }
-.wpcf7-radio input,
-.wpcf7-radio .wpcf7-list-item-label {
+.wpcf7-list-item input,
+.wpcf7-list-item .wpcf7-list-item-label {
 	vertical-align: middle;
 }
 .wpcf7-radio input {
@@ -177,9 +171,6 @@ span.wpcf7-list-item {
 	padding: 16px 38px 12px;
 	font-size: 21px;
 }
-.wpcf7-form-control-wrap {
-	position: relative;
-}
 .wpcf7-not-valid-tip {
 	font-size: 16px;
 	position: absolute;
@@ -195,31 +186,26 @@ span.wpcf7-list-item {
 
 /* Desktop */
 @media (min-width: 980px) {
-	form br {
-		display: none;
-	}
-	h3 + p {
+	.flex-fields {
 		margin-top: 8px;
 		line-height: 64px;
 		padding: 0 5px;
 		display: flex;
 		flex-wrap: wrap;
 	}
-	h3 + p > label {
-		white-space: nowrap;
-		display: flex;
+	.flex-fields br {
+		display: none;
+	}
+	.flex-fields label {
 		margin: 0 5px;
 		flex-basis: 25%;
 		flex-grow: 2;
 		flex-shrink: 2;
 	}
-	.wpcf7-form-control-wrap {
-		float: right;
-		margin-left: 5px;
-		flex-grow: 2;
+	.flex-fields .wpcf7-form-control-wrap {
+		margin-top: 0;
 	}
-	.wpcf7-form-control {
-		width: 100%;
+	.flex-fields .wpcf7-form-control {
 	}
 	.wpcf7-submit {
 		width: auto;
@@ -230,14 +216,40 @@ span.wpcf7-list-item {
 	label[for="bridesmaid-material"], label[for="bridesmaid-designer"] { flex-basis:20%; }
 	label[for="bridesmaids-count"] { flex-basis: 3em; }
 	label[for="bridesmaids-description"] { flex-basis: 40%; flex-grow: 0; }
-	label[for="comments"] .wpcf7-form-control-wrap { padding-top: 1em; }
 	/* End Bridal Party */
+	/* Bridesmaids Dress */
+	label[for="maids-street"] { flex-basis: 45%; }
+	label[for="maids-home-phone"], label[for="maids-cell-phone"], label[for="maids-work-phone"] { flex-basis: 19%; }
+	label[for="maids-unit"] { flex-basis: 15%; }
+	label[for="brides-name"] { flex-basis: 60%; }
+	label[for="maids-dress-size"] { flex-basis: 10%; }
+	label[for="size-chart-initials"] { flex-grow: 2; text-align: right; }
+	label[for="maids-dress-style"], label[for="maids-dress-designer"] { flex-basis: 30%; }
+	label[for="maids-dress-material"], label[for="maids-dress-color"], label[for="maids-dress-extra-length"] { flex-basis: 20%; }
+	label[for="card-address"] { flex-basis: 50%; }
+	label[for="card-phone"], label[for="card-email"] { flex-basis: 20%; }
+	/* End Bridesmaids Dress */
+	.wpcf7-form-control-wrap.maid-comments {
+		float: none;
+		display: inline-block;
+		max-width: 500px;
+		vertical-align: top;
+	}
+	.wpcf7-form-control-wrap.bride-comments {
+		margin-top: 0.8em;
+	}
 	/* No Flex */
 	label[for="purchased-at-hitched"],
-	label[for="comments"] {
+	label[for="bride-comments"] {
 		display: block;
 		flex-basis: auto;
 		flex-grow: 0;
 	}
+	label[for="purchased-at-hitched"] {
+	}
+	label[for="purchased-at-hitched"] .wpcf7-list-item-label {
+		line-height: 1.4;
+	}
+	/* End No Flex */
 }
 /* End Desktop */

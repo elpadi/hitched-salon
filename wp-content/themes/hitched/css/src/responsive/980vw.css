@@ -7,13 +7,6 @@
 }
 
 /**
- * Party form fields
- */
-.bride-cell-phone, .bride-work-phone { flex-basis:19%; }
-.bridesmaid-material, .bridesmaid-designer { flex-basis:20%; }
-.bridesmaids-description { flex-basis:auto; flex-grow:0; }
-
-/**
  * Bridesmaids form fields
  */
 .maids-street { flex-basis:45%; }

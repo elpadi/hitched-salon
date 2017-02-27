@@ -38,7 +38,7 @@ add_action('widgets_init', function() {
 });
 
 function hitched_styles() {
-	global $wp_the_query;
+	global $wp_the_query, $post;
 	$css_dir = get_stylesheet_directory_uri().'/css/src';
 	$root = dirname(WP_CONTENT_DIR);
 	$styles = [];
@@ -58,8 +58,13 @@ function hitched_styles() {
 
 	wpcf7_enqueue_styles();
 
+	if (is_front_page()) {
+		wp_enqueue_style(Site::prefix('appointments'));
+	}
+	else {
+		if (strpos($post->post_content, '[contact-form-7 ') !== FALSE) wp_enqueue_style(Site::prefix('forms'));
+	}
 	if (is_page('sample-sale')) wp_enqueue_style(Site::prefix('lightbox'));
-	wp_enqueue_style(Site::prefix('forms'));
 	wp_enqueue_style(Site::prefix('main'), $css_dir.'/base/main.css', array_merge($styles['base'], $styles['layout']), false);
 
 	$queue = [];

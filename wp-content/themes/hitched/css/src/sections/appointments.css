@@ -1,0 +1,232 @@
+.wpcf7-form input,
+textarea {
+	border-width:1px;
+	border-style:solid;
+	color:inherit;
+	padding: 0.5em;
+	line-height: 1.8;
+}
+/*
+.entry-content fieldset, .entry-content input[type="submit"] {
+	font-size:21px;
+}
+.no-js .entry-content label {
+	max-width:50%;
+}
+*/
+form th,
+.entry-content input[type="submit"],
+legend,
+.entry-content h3 {
+	font-family:BrandonGrotesqueBlackRegular;
+	font-size:23px;
+	font-weight:normal;
+}
+body article.page {
+	margin-bottom:90px;
+}
+article.page h1.page-title {
+	font-family:BrandonGrotesqueBlackRegular;
+	text-transform:uppercase;
+	font-size:23px;
+	margin-top:105px;
+	text-align:center;
+}
+article.page > div.entry-content {
+	text-align:left;
+	max-width:100%;
+}
+.required-label::after {
+	content:' (required)';
+	font-weight: normal;
+	margin-left: 0.2em;
+	font-size: 1.1em;
+}
+form {
+	text-align:center;
+}
+.widget_appointment-slider_widget form {
+	text-align: left;
+}
+fieldset {
+	border-style:none;
+	padding:0;
+}
+.header-widget fieldset {
+	margin-top: 1.4em;
+}
+fieldset > legend {
+	width:100%;
+}
+fieldset label {
+	font-size: 0.9em;
+}
+fieldset > p {
+}
+fieldset > p > span > input,
+fieldset > p > span > textarea {
+	width:100%;
+}
+.entry-content form > p {
+	margin:3em auto 0.8em;
+	text-align:left;
+}
+/* Submit */
+.entry-content form > p:nth-last-of-type(1) {
+	text-align:center;
+}
+form > fieldset + p {
+	margin-top:40px;
+}
+form > h3 {
+	margin:30px auto 0;
+}
+form > h3 + p {
+	margin-top:20px;
+}
+form table {
+	width:100%;
+	border-collapse:collapse;
+	margin-bottom:40px;
+}
+table input {
+	width:200px;
+}
+@media (max-width: 767px) {
+	form th, form td {
+		display:none;
+	}
+}
+form th:first-child, form td:first-child {
+	display:table-cell;
+}
+form th {
+	padding:0 12px 20px;
+	text-align:center;
+	font-size:18px;
+}
+form td {
+	border-right:1px solid black;
+	border-bottom:1px solid black;
+	padding:12px 5px 12px;
+}
+form td:first-child,
+form td:last-child {
+	border-right-style:none;
+}
+form tr:last-child > td {
+	border-bottom-style:none;
+}
+.entry-content input[type="submit"] {
+	border-style:none;
+	text-transform:uppercase;
+	font-size:17px;
+	padding:10px 38px;
+	margin-top:24px;
+	color:white;
+}
+
+.wpcf7-form br {
+	display: none;
+}
+.wpcf7-radio {
+	display:block;
+	margin-top:20px;
+}
+.wpcf7-radio > span {
+	display:block;
+	margin-bottom:30px;
+}
+.wpcf7-radio input,
+.wpcf7-radio .wpcf7-list-item-label {
+	vertical-align:middle;
+}
+.wpcf7-radio input {
+	margin-right:30px;
+	transform:scale(2);
+}
+.wpcf7-radio .wpcf7-list-item-label {
+	text-align:left;
+	display:inline-block;
+	line-height:1.3;
+	width:calc(100% - 60px);
+}
+.wpcf7-radio.inline-choices > span {
+	margin:0 30px;
+}
+.wpcf7-radio.inline-choices > span input {
+	margin-right:15px;
+}
+
+.entry-content form > p input[type="text"] {
+	font-size:22px;
+	padding:0 10px;
+}
+
+.wpcf7-response-output {
+	margin:1em 0 0;
+	padding:16px 38px 12px;
+	font-size:21px;
+}
+.wpcf7-form-control-wrap {
+	position:relative;
+}
+span.wpcf7-not-valid-tip {
+}
+.wpcf7-display-none {
+	display:none;
+}
+div.wpcf7-response-output {
+	border-style: none;
+	padding: 1em;
+	margin: 0;
+}
+
+.widget_appointment-slider_widget .wpcf7-form > p label,
+.widget_appointment-slider_widget legend {
+	font-size: 0.9em;
+}
+.widget_appointment-slider_widget .wpcf7-form > p label {
+	display: block;
+	margin-bottom: 0.1em;
+}
+.widget_appointment-slider_widget input[type="submit"] {
+	text-transform: uppercase;
+	padding: 0.5em 2em;
+	font-size: 0.9em;
+}
+.widget_appointment-slider_widget p > .wpcf7-form-control-wrap {
+	display: block;
+}
+.widget_appointment-slider_widget p > .wpcf7-form-control-wrap > input,
+.widget_appointment-slider_widget textarea {
+	width: 100%;
+}
+.widget_appointment-slider_widget select {
+	font-size: 0.7em;
+	padding: 0.2em 0.5em;
+	min-width: 300px;
+	margin-top: 0.6em;
+}
+.widget_appointment-slider_widget textarea {
+	margin-top: 0.6em;
+}
+
+fieldset.two-col p {
+	overflow: hidden;
+	margin-top: 0.2em;
+}
+fieldset.two-col span,
+fieldset.two-col label {
+	width: 49%;
+}
+fieldset.two-col span:nth-of-type(1),
+fieldset.two-col label:nth-of-type(1) {
+	float: left;
+	clear: left;
+}
+fieldset.two-col span:nth-of-type(2),
+fieldset.two-col label:nth-of-type(2) {
+	float: right;
+	clear: right;
+}

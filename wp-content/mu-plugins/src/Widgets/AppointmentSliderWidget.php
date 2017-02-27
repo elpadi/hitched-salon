@@ -1,6 +1,5 @@
 <?php
 namespace Hitched\Widgets;
-use MustUsePlugin\Widgets\BaseWidget;
 
 class AppointmentSliderWidget extends BaseWidget {
 
@@ -22,6 +21,9 @@ class AppointmentSliderWidget extends BaseWidget {
 					'shortcode' => esc_attr($shortcode),
 				];
 			}, $matches[0]);
+			$values['info'] = preg_replace_callback('/:( +)([0-9])/', function($matches) {
+				return sprintf(':%s%s', str_repeat('&nbsp;', strlen($matches[1])), $matches[2]);
+			}, $values['info']);
 		}
 		return $values;
 	}

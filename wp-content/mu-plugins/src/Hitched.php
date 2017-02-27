@@ -1,18 +1,23 @@
 <?php
 namespace Hitched;
 
-class Hitched extends \MustUsePlugin\App {
+use MustUsePlugin\App;
+
+class Hitched extends App {
 
 	protected static $SITE_PREFIX = 'hitched_';
 
-	protected function siteSettings() {
+	function siteInit() {
+		add_action('widgets_init', [$this, 'widgetsInit']);
+		add_action('wp_ajax_shortcode', [$this, 'ajaxShortcode']);
+		add_action('wp_ajax_nopriv_shortcode', [$this, 'ajaxShortcode']);
 	}
 
-	public function themeInit() {
-		$this->registerPostType('team', $singular='Person', $plural='Team', ['editor'], ['menu_icon' => 'dashicons-groups']);
+	function siteSettings() {
 	}
-	
-	public function siteInit() {
+
+	function themeInit() {
+		$this->registerPostType('team', $singular='Person', $plural='Team', ['editor'], ['menu_icon' => 'dashicons-groups']);
 	}
 
 	function themeSetup() {

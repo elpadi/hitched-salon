@@ -70,12 +70,8 @@ function hitched_styles() {
 
 	$queue = [];
 	if (is_front_page()) $queue = array_merge($queue, ['slideshow','grid','home']);
-	elseif (is_page()) {
-		$queue[] = 'pages';
-		wp_enqueue_style(Site::prefix($wp_the_query->query_vars['pagename']));
-		if ($wp_the_query->query_vars['pagename'] === 'maids') wp_enqueue_style(Site::prefix('bridal-gowns'));
-	}
-	foreach ($queue as $style) wp_enqueue_style(Site::prefix($style));
+	elseif (is_page()) $queue = array_merge($queue, ['pages', basename(get_page_template_slug($post->ID), '.php'), $wp_the_query->query_vars['pagename']]);
+	foreach (array_filter($queue) as $style) wp_enqueue_style(Site::prefix($style));
 	wp_enqueue_style(Site::prefix('768'), $css_dir.'/responsive/768vw.css', [], $version, '(min-width: 768px)');
 	wp_enqueue_style(Site::prefix('980'), $css_dir.'/responsive/980vw.css', [], $version, '(min-width: 980px)');
 }

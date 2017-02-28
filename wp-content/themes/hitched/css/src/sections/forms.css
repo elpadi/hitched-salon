@@ -39,9 +39,11 @@ label > .wpcf7-form-control-wrap {
 	margin-top: -0.4em;
 	flex-grow: 2;
 }
-.wpcf7-form-control-wrap.purchased-at-hitched { margin-top: 0; }
 label .wpcf7-form-control {
 	width: 100%;
+}
+input[type="checkbox"] {
+	margin-top: 24px;
 }
 /* End Basic */
 
@@ -249,7 +251,6 @@ span.wpcf7-list-item {
 	label[for="purchased-at-hitched"] {
 	}
 	label[for="purchased-at-hitched"] .wpcf7-list-item-label {
-		line-height: 1.4;
 	}
 	/* End No Flex */
 }

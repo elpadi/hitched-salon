@@ -31,7 +31,6 @@ label > .wpcf7-form-control-wrap {
 	vertical-align: middle;
 }
 label {
-	white-space: nowrap;
 	display: flex;
 }
 label > .wpcf7-form-control-wrap {
@@ -40,6 +39,7 @@ label > .wpcf7-form-control-wrap {
 	margin-top: -0.4em;
 	flex-grow: 2;
 }
+.wpcf7-form-control-wrap.purchased-at-hitched { margin-top: 0; }
 label .wpcf7-form-control {
 	width: 100%;
 }
@@ -198,6 +198,7 @@ span.wpcf7-list-item {
 	}
 	.flex-fields label {
 		margin: 0 5px;
+		white-space: nowrap;
 		flex-basis: 25%;
 		flex-grow: 2;
 		flex-shrink: 2;

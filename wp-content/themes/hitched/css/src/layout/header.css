@@ -24,6 +24,13 @@
 .header-widget h2 {
 	font-size: 1.2em;
 	margin-bottom: 0.5em;
+	width: calc(100% - 110px); /* do not go over the close button */
+	max-width: 200px;
+}
+@media (min-width:500px) {
+	.header-widget h2 {
+		max-width: none;
+	}
 }
 .header-widget .site-width > p {
 	margin: 0.4em 0;
@@ -40,13 +47,30 @@
 	width: 100%;
 	top: 0;
 	left: 0;
-	padding: 2% 0 5%;
+	padding: 2% 12px 5%;
 	min-height: 100vh;
+	visibility: hidden;
+	-ms-transform: translateY(-100%);
+	-webkit-transform: translateY(-100%);
 	transform: translateY(-100%);
-	transition: transform 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+	-ms-transition: visibility 0s 0.3s, -ms-transform 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+	-webkit-transition: visibility 0s 0.3s, -webkit-transform 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+	transition: visibility 0s 0.3s, transform 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 .widget_appointment-slider_widget.visible {
+	visibility: visible;
+	-ms-transform: translateY(0);
+	-webkit-transform: translateY(0);
 	transform: translateY(0);
+	-ms-transition: visibility 0s, -ms-transform 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+	-webkit-transition: visibility 0s, -webkit-transform 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+	transition: visibility 0s, transform 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+.no-transform .widget_appointment-slider_widget {
+	display: none;
+}
+.no-transform .widget_appointment-slider_widget.visible {
+	display: block;
 }
 .widget_appointment-slider_widget .close-button {
 	position: absolute;
@@ -61,14 +85,15 @@
 	font-weight: bold;
 }
 .widget_appointment-slider_widget .form-buttons {
-	word-spacing: -0.3em;
+	word-spacing: 1.2em;
 	margin-bottom: 2em;
 }
 .widget_appointment-slider_widget button {
 	position: relative;
 	border-width: 1px;
 	border-style: solid !important;
-	padding: 0.3em 1em !important;
+	padding: 0.5em 1em 0.4em !important;
+	line-height: 1.5;
 	font-size: 1em;
 }
 .widget_appointment-slider_widget button:hover {
@@ -81,19 +106,36 @@
 .widget_appointment-slider_widget button:not(.loading) {
 	background-image: none !important;
 }
+.widget_appointment-slider_widget .form-buttons > button {
+	min-width: 270px;
+	text-align: center;
+	margin-bottom: 10px;
+	word-spacing: 0;
+	border-width: 2px;
+}
+@media (min-width:640px) {
+	.widget_appointment-slider_widget .form-buttons > button {
+		margin-bottom: 0;
+	}
+}
 .widget_appointment-slider_widget .wpcf7 {
 	max-width: 500px;
+	display: none;
 	opacity: 0;
 	visibility: hidden;
+	-ms-transition: opacity 0.2s linear, visibility 0s 0.2s;
+	-webkit-transition: opacity 0.2s linear, visibility 0s 0.2s;
 	transition: opacity 0.2s linear, visibility 0s 0.2s;
 }
 .widget_appointment-slider_widget .wpcf7.visible {
 	opacity: 1;
 	visibility: visible;
+	-ms-transition: opacity 0.2s linear, visibility 0s 0s;
+	-webkit-transition: opacity 0.2s linear, visibility 0s 0s;
 	transition: opacity 0.2s linear, visibility 0s 0s;
 }
-.widget_appointment-slider_widget .wpcf7.hidden {
-	display: none;
+.widget_appointment-slider_widget .wpcf7.selected {
+	display: block;
 }
 .widget_appointment-slider_widget .wpcf7 h2 {
 	font-size: 1.05em;

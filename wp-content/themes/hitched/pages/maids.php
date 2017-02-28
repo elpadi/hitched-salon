@@ -1,1 +1,1 @@
-<?php include(__DIR__.'/bridal.php'); ?>
+<?php include(__DIR__.'/bridal.php');

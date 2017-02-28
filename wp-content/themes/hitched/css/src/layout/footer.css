@@ -58,6 +58,9 @@ input[type="submit"] {
 	padding:0 8px;
 	letter-spacing:2px;
 	font-size:9px;
+	border-radius: 0;
+	box-shadow: none;
+	-webkit-appearance: none;
 }
 /* Email */
 #colophon #text-3 {

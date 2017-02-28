@@ -22,7 +22,7 @@ Object.defineProperty(AppointmentSlider.prototype, 'reset', {
 	value: function() {
 		this.formButtons.forEach(function(button) {
 			this.deselect(button);
-			if ('appointmentForm' in button) setTimeout(function() { button.appointmentForm.classList.remove('hidden'); }, AppointmentSlider.SLIDE_DURATION);
+			if ('appointmentForm' in button) setTimeout(function() { button.appointmentForm.classList.remove('selected'); }, AppointmentSlider.SLIDE_DURATION);
 		}.bind(this));
 	}
 });
@@ -55,7 +55,13 @@ Object.defineProperty(AppointmentSlider.prototype, 'onFormLoad', {
 			var form = div.children[0].cloneNode(true);
 			button.classList.remove('loading');
 			this.container.firstChild.appendChild(form);
+			form.classList.add('selected');
 			setTimeout(function() {
+				if ('toISOString' in Date.prototype) Array.from(form.getElementsByClassName('wpcf7-date')).forEach(function(input) {
+					input.value = (new Date()).toISOString().split('T').shift();
+					if (input.type !== 'date') input.parentNode.previousElementSibling.innerHTML += ' (yyyy-mm-dd)';
+				});
+				Array.from(form.getElementsByTagName('option')).filter(function(option) { return option.innerHTML === '---'; }).forEach(function(option) { option.innerHTML = 'Please select ...'; });
 				button.appointmentForm = form;
 				jQuery(form).find('form').attr('action', location.href).wpcf7InitForm();
 				form.classList.add('visible');
@@ -72,7 +78,7 @@ Object.defineProperty(AppointmentSlider.prototype, 'select', {
 		setTimeout(function() {
 			button.classList.add('selected');
 			if ('appointmentForm' in button) {
-				button.appointmentForm.classList.remove('hidden');
+				button.appointmentForm.classList.add('selected');
 				setTimeout(function() { button.appointmentForm.classList.add('visible'); }, 50);
 			}
 			else this.load(button);
@@ -91,7 +97,7 @@ Object.defineProperty(AppointmentSlider.prototype, 'deselect', {
 		button.classList.remove('selected');
 		if ('appointmentForm' in button) {
 			button.appointmentForm.classList.remove('visible');
-			setTimeout(function() { button.appointmentForm.classList.add('hidden'); }, AppointmentSlider.FADE_DURATION);
+			setTimeout(function() { button.appointmentForm.classList.remove('selected'); }, AppointmentSlider.FADE_DURATION);
 		}
 		if (button.classList.contains('loading')) {
 			this.cancel(button);

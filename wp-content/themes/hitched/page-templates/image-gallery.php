@@ -5,8 +5,6 @@
  * @package WordPress
  * @subpackage Twenty_Fourteen
  */
-?>
-<?php
 get_header();
 the_post();
 $images = array_filter(get_attached_media('image'), function($img) { return !empty($img->post_excerpt); });
@@ -18,7 +16,7 @@ array_multisort($titles, SORT_ASC, SORT_REGULAR, $images);
 			<?php the_post_thumbnail('full'); ?>
 			<article id="post-<?php the_ID(); ?>" <?php post_class(['site-width']); ?>>
 				<header>
-					<h1 class="page-title screen-reader-text cursive light tc lowercase"><?php single_post_title(); ?></h1>
+					<h1 class="page-title cursive light tc lowercase"><?php single_post_title(); ?></h1>
 				</header>
 				<div class="entry-content tc"><?php the_content(); ?></div><!-- .entry-content -->
 				<div class="designers-gallery">

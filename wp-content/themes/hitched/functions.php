@@ -40,6 +40,7 @@ add_action('widgets_init', function() {
 function hitched_styles() {
 	global $wp_the_query, $post;
 	$css_dir = get_stylesheet_directory_uri().'/css/src';
+	$version = isset($_ENV['CSS_VERSION']) ? $_ENV['CSS_VERSION'] : FALSE;
 	$root = dirname(WP_CONTENT_DIR);
 	$styles = [];
 	foreach (glob(get_stylesheet_directory()."/css/src/*", GLOB_ONLYDIR) as $dir) {
@@ -49,12 +50,12 @@ function hitched_styles() {
 			if ($handle === Site::prefix('main')) continue;
 			$styles[$dirname][] = $handle;
 			$parts = explode('/src/', $file);
-			wp_register_style($handle, "$css_dir/".end($parts), [], false);
+			wp_register_style($handle, "$css_dir/".end($parts), [], $version);
 		}
 	}
 	
-	wp_register_style(Site::prefix('lightbox'), $css_dir.'/../dist/vendor/lightbox.css', [], false);
-	wp_register_style(Site::prefix('pages'), $css_dir.'/pages/main.css', [], false);
+	wp_register_style(Site::prefix('lightbox'), $css_dir.'/../dist/vendor/lightbox.css', [], $version);
+	wp_register_style(Site::prefix('pages'), $css_dir.'/pages/main.css', [], $version);
 
 	wpcf7_enqueue_styles();
 
@@ -65,29 +66,31 @@ function hitched_styles() {
 		if (strpos($post->post_content, '[contact-form-7 ') !== FALSE) wp_enqueue_style(Site::prefix('forms'));
 	}
 	if (is_page('sample-sale')) wp_enqueue_style(Site::prefix('lightbox'));
-	wp_enqueue_style(Site::prefix('main'), $css_dir.'/base/main.css', array_merge($styles['base'], $styles['layout']), false);
+	wp_enqueue_style(Site::prefix('main'), $css_dir.'/base/main.css', array_merge($styles['base'], $styles['layout']), $version);
 
 	$queue = [];
 	if (is_front_page()) $queue = array_merge($queue, ['slideshow','grid','home']);
 	elseif (is_page()) {
 		$queue[] = 'pages';
 		wp_enqueue_style(Site::prefix($wp_the_query->query_vars['pagename']));
-		if ($wp_the_query->query_vars['pagename'] === 'maids') wp_enqueue_style(Site::prefix('bridal'));
+		if ($wp_the_query->query_vars['pagename'] === 'maids') wp_enqueue_style(Site::prefix('bridal-gowns'));
 	}
 	foreach ($queue as $style) wp_enqueue_style(Site::prefix($style));
-	wp_enqueue_style(Site::prefix('768'), $css_dir.'/responsive/768vw.css', [], false, '(min-width: 768px)');
-	wp_enqueue_style(Site::prefix('980'), $css_dir.'/responsive/980vw.css', [], false, '(min-width: 980px)');
+	wp_enqueue_style(Site::prefix('768'), $css_dir.'/responsive/768vw.css', [], $version, '(min-width: 768px)');
+	wp_enqueue_style(Site::prefix('980'), $css_dir.'/responsive/980vw.css', [], $version, '(min-width: 980px)');
 }
 function hitched_scripts() {
 	$js_dir = get_stylesheet_directory_uri().'/js/src';
-	$deps = ['jquery',Site::prefix('stdlib')];
+	$version = isset($_ENV['JS_VERSION']) ? $_ENV['JS_VERSION'] : FALSE;
 
-	wp_register_script(Site::prefix('stdlib'), $js_dir.'/inc/stdlib.js', [], false, true);
-	wp_register_script(Site::prefix('slideshow'), $js_dir.'/inc/slideshow.js', [], false, true);
-	wp_register_script(Site::prefix('appointment-slider'), $js_dir.'/hitched/appointment-slider.js', [], false, true);
-	wp_register_script(Site::prefix('hitched'), $js_dir.'/hitched/hitched.js', [], false, true);
-	wp_register_script(Site::prefix('lightbox'), $js_dir.'/../dist/vendor/lightbox-plus-jquery.min.js', [], false, true);
+	wp_register_script(Site::prefix('shims'), $js_dir.'/inc/shims.js', [], $version, true);
+	wp_register_script(Site::prefix('stdlib'), $js_dir.'/inc/stdlib.js', [], $version, true);
+	wp_register_script(Site::prefix('slideshow'), $js_dir.'/inc/slideshow.js', [], $version, true);
+	wp_register_script(Site::prefix('appointment-slider'), $js_dir.'/hitched/appointment-slider.js', [], $version, true);
+	wp_register_script(Site::prefix('hitched'), $js_dir.'/hitched/hitched.js', [], $version, true);
+	wp_register_script(Site::prefix('lightbox'), $js_dir.'/../dist/vendor/lightbox-plus-jquery.min.js', [], $version, true);
 
+	$deps = ['jquery', Site::prefix('shims'), Site::prefix('stdlib')];
 	if (is_page('sample-sale')) $deps[] = Site::prefix('lightbox');
 	if (is_front_page()) $deps[] = Site::prefix('slideshow');
 
@@ -97,10 +100,10 @@ function hitched_scripts() {
 		'WP_URL' => get_option('siteurl'),
 		'AJAX_URL' => admin_url('admin-ajax.php'),
 		'LOADING_SPINNER_URL' => admin_url('images/loading.gif'),
-		'USER_ID' => wp_get_current_user()->ID,
+		'USER_ID' => get_current_user_id(),
 	]);
 	wpcf7_enqueue_scripts();
-	wp_enqueue_script(Site::prefix('main'), $js_dir.'/main.js', $deps, false, true);
+	wp_enqueue_script(Site::prefix('main'), $js_dir.'/main.js', $deps, $version, true);
 }
 function hitched_assets() {
 	if (MINIFY_ASSETS) {

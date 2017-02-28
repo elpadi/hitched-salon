@@ -6,35 +6,12 @@ textarea {
 	padding: 0.5em;
 	line-height: 1.8;
 }
-/*
-.entry-content fieldset, .entry-content input[type="submit"] {
-	font-size:21px;
-}
-.no-js .entry-content label {
-	max-width:50%;
-}
-*/
 form th,
 .entry-content input[type="submit"],
-legend,
-.entry-content h3 {
+legend {
 	font-family:BrandonGrotesqueBlackRegular;
 	font-size:23px;
 	font-weight:normal;
-}
-body article.page {
-	margin-bottom:90px;
-}
-article.page h1.page-title {
-	font-family:BrandonGrotesqueBlackRegular;
-	text-transform:uppercase;
-	font-size:23px;
-	margin-top:105px;
-	text-align:center;
-}
-article.page > div.entry-content {
-	text-align:left;
-	max-width:100%;
 }
 .required-label::after {
 	content:' (required)';
@@ -145,9 +122,11 @@ form tr:last-child > td {
 	margin-right:30px;
 	transform:scale(2);
 }
+.is-ie .wpcf7-radio input {
+	transform:scale(1);
+}
 .wpcf7-radio .wpcf7-list-item-label {
 	text-align:left;
-	display:inline-block;
 	line-height:1.3;
 	width:calc(100% - 60px);
 }

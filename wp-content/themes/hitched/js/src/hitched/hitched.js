@@ -99,7 +99,7 @@ var Hitched = (function() {
 		if (document.body.classList.contains('home')) initHome();
 		if (document.body.classList.contains('page-id-16')) initFaq();
 		if (document.getElementsByClassName('wpcf7-form').length) initForms();
-		if (WP.USER_ID != 0) initAppointmentSlider();
+		initAppointmentSlider();
 	};
 
 	var onload = function() {

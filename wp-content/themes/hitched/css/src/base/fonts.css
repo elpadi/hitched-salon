@@ -63,6 +63,7 @@ strong:not(.prox--light),
 .header-widget h2,
 .header-widget label,
 .widget_appointment-slider_widget input[type="submit"],
+.widget_appointment-slider_widget .form-buttons > button,
 .bold:not(.prox--light),
 .bg--bold {
 	font-family:BrandonGrotesqueBlackRegular,sans-serif;

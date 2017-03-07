@@ -8,8 +8,8 @@ Redirect to thank you page after filling the form, which includes payment link t
 </description>
 </task>
 <task creationDateTime="2017-02-25 23:36:20.815693" id="1f053b2a-fbdd-11e6-a218-0022fa33187c" modificationDateTime="2017-02-25 23:36:24.828865" status="1" subject="Create html form print out" />
-<task creationDateTime="2017-02-25 23:34:36.650079" id="e0eed40e-fbdc-11e6-a218-0022fa33187c" modificationDateTime="2017-02-25 23:35:14.142722" status="1" subject="Fix look of order forms" />
-<task creationDateTime="2017-02-25 23:35:17.655828" id="f95fcdb8-fbdc-11e6-a218-0022fa33187c" modificationDateTime="2017-02-25 23:35:41.824269" status="1" subject="Signature / date fields">
+<task completiondate="2017-02-28 15:58:57.715057" creationDateTime="2017-02-25 23:34:36.650079" id="e0eed40e-fbdc-11e6-a218-0022fa33187c" modificationDateTime="2017-02-28 15:58:57.714322" percentageComplete="100" status="1" subject="Fix look of order forms" />
+<task completiondate="2017-03-07 16:39:24.976576" creationDateTime="2017-02-25 23:35:17.655828" id="f95fcdb8-fbdc-11e6-a218-0022fa33187c" modificationDateTime="2017-03-07 16:39:24.976136" percentageComplete="100" status="1" subject="Signature / date fields">
 <description>
 The signature / date fieldset only made sense to me as part of a print out of the form, that would happen at the store after someone submits the form. What do you have in mind to use as signature?
 </description>

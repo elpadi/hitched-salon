@@ -168,3 +168,9 @@ add_filter('esc_html', function($safe, $raw) {
 	}
 	return $safe;
 }, 10, 2);
+
+add_filter('body_class', function($classes) {
+	global $post;
+	if (is_page()) $classes[] = "page--$post->post_name";
+	return $classes;
+}, 10, 2);
